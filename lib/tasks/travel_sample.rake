@@ -1,64 +1,24 @@
 require 'ffaker'
+require 'pathname'
+require 'spree/sample'
 
-#require 'rubygems'
+namespace :spree_travel_sample do
+  desc 'Loads travel sample data'
+  task :load => :environment do
+    if ARGV.include?("db:migrate")
+      puts %Q{
+Please run db:migrate separately from spree_travel_sample:load.
 
-#require 'spreadsheet'
-I18n.locale = :en
+Running db:migrate and spree_travel_sample:load at the same time has been known to
+cause problems where columns may be not available during sample data loading.
 
+Migrations have been run. Please run "rake spree_travel_sample:load" by itself now.
+      }
+      exit(1)
+    end
 
-#namespace :db do
-#  desc 'Loads data sice db/load_data_core'
-#  task :load_data_core do
-#    sample_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data/core')
-#
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(sample_path)
-#  end
-#end
-
-namespace :db do
-  desc 'Loads data sice db/load_data'
-
-  task :load_data do
-#    option_types_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'option_types')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(option_types_path)
-    
-#    option_values_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'option_values')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(option_values_path)
-        
-#    property_types_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'property_types')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(property_types_path)
-    
-#    properties_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'properties')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(properties_path)
-    
-#    taxonomies_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'taxonomies')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(taxonomies_path)
-    
-#    taxons_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'taxons')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(taxons_path)
-    
-#    home_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'home')
-
-#    Rake::Task['db:load_dir'].reenable
-#    Rake::Task['db:load_dir'].invoke(home_path)
-    
-    code_ota_path = File.join(File.dirname(__FILE__), '..', '..', 'db', 'load_data', 'code_ota')
-
-    Rake::Task['db:load_dir'].reenable
-    Rake::Task['db:load_dir'].invoke(code_ota_path)
-
+    SpreeSample::Engine.load_travel_samples
   end
 end
+
+
