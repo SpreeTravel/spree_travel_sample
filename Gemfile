@@ -1,34 +1,43 @@
-CONFIG = :snc
+CONFIG = :pqr
 ###########################################################################
 case CONFIG
 when :pqr
   GEMS_PATH = 'http://localhost/rubygems/'
-  SPREE_DEVISE_PATH = 'file:///home/pqr/work/jaf/spree'
+  SPREE_PATH = 'file:///home/pqr/work/jaf/spree'
   SPREE_TRAVEL_PATH = 'file:///home/pqr/work/jaf/openjaf'
 when :snc
   GEMS_PATH = 'file:///home/test/.rvm/gems/ruby-1.9.3-p392/bundler/gems/'
-  SPREE_DEVISE_PATH = 'file:///media/Data/jaf/spree'
+  SPREE_PATH = 'file:///media/Data/jaf/spree'
   SPREE_TRAVEL_PATH = 'file:///media/Data/jaf/spree_travel'
 when :raul
   GEMS_PATH = 'http://localhost/rubygems/'
-  SPREE_DEVISE_PATH = 'file:///home/raul/RubymineProjects/spree'
+  SPREE_PATH = 'file:///home/raul/RubymineProjects/spree'
   SPREE_TRAVEL_PATH = 'file:///home/raul/RubymineProjects/openjaf'
 else
   GEMS_PATH = 'http://rubygems.org'
-  SPREE_DEVISE_PATH = 'https://github.com/radar'
-  SPREE_TRAVEL_PATH = 'file:///media/Data/jaf/spree'
+  SPREE_PATH = 'https://github.com/spree'
+  SPREE_TRAVEL_PATH = 'https://github.com/openjaf'
 end
-########################################################################
+###########################################################################
 
 source GEMS_PATH
 
-gem 'spree_auth_devise', 			:git => "#{SPREE_DEVISE_PATH}/spree_auth_devise", :branch => '2-0-stable'
+#SPREE_GEMS
+gem 'spree',                      :git => "#{SPREE_PATH}/spree", :branch => '2-0-stable'
+gem 'spree_auth_devise',          :git => "#{SPREE_PATH}/spree_auth_devise", :branch => '2-0-stable'
+gem 'spree_related_products', 	  :git => "#{SPREE_PATH}/spree_related_products"
 
-gem 'spree_enhanced_relations', 	:git => "#{SPREE_TRAVEL_PATH}/spree_enhanced_relations"
-gem 'spree_enhanced_banner', 		:git => "#{SPREE_TRAVEL_PATH}/spree_enhanced_banner"
-gem 'spree_fancy_menu', 			:git => "#{SPREE_TRAVEL_PATH}/spree_fancy_menu"
-gem 'spree_location', 				:git => "#{SPREE_TRAVEL_PATH}/spree_location"
-gem 'spree_property_type', 			:git => "#{SPREE_TRAVEL_PATH}/spree_property_type"
+#SPREE_TRAVEL_GEMS
+gem 'spree_property_type', 		  :git => "#{SPREE_TRAVEL_PATH}/spree_property_type"
+gem 'spree_travel', 			  :git => "#{SPREE_TRAVEL_PATH}/spree_travel"
+gem 'spree_location',             :git => "#{SPREE_TRAVEL_PATH}/spree_location"
+gem 'spree_travel_rentacar',      :git => "#{SPREE_TRAVEL_PATH}/spree_travel_rentacar"
 
-gemspec
-
+#gem 'spree_travel_accommodation',:git => "#{SPREE_TRAVEL_PATH}/spree_travel_accommodation"
+#gem 'spree_travel_destination',  :git => "#{SPREE_TRAVEL_PATH}/spree_travel_destination"
+#gem 'spree_travel_flight',       :git => "#{SPREE_TRAVEL_PATH}/spree_travel_flight"
+#gem 'spree_travel_point',        :git => "#{SPREE_TRAVEL_PATH}/spree_travel_point"
+#gem 'spree_travel_program',      :git => "#{SPREE_TRAVEL_PATH}/spree_travel_program"
+#gem 'spree_travel_route',        :git => "#{SPREE_TRAVEL_PATH}/spree_travel_route"
+#gem 'spree_travel_tour',         :git => "#{SPREE_TRAVEL_PATH}/spree_travel_tour"
+#gem 'spree_travel_transfer',     :git => "#{SPREE_TRAVEL_PATH}/spree_travel_transfer"
