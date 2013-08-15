@@ -1,6 +1,6 @@
 require 'ffaker'
 require 'pathname'
-require 'spree/sample'
+require 'spree/travel_sample'
 
 namespace :spree_travel_sample do
   desc 'Loads travel sample data'
