@@ -1,4 +1,4 @@
-CONFIG = :snc
+CONFIG = :other
 ###########################################################################
 case CONFIG
 when :pqr
@@ -17,17 +17,20 @@ else
   GEMS_PATH = 'http://rubygems.org'
   SPREE_PATH = 'https://github.com/spree'
   SPREE_TRAVEL_PATH = 'https://github.com/openjaf'
+  PROTOCOL = :git
 end
 ###########################################################################
 
 source GEMS_PATH
 
 #SPREE_GEMS
-gem 'spree',                      :git => "#{SPREE_PATH}/spree", :branch => '2-0-stable'
-gem 'spree_auth_devise',          :git => "#{SPREE_PATH}/spree_auth_devise", :branch => '2-0-stable'
-gem 'spree_related_products', 	  :git => "#{SPREE_PATH}/spree_related_products"
+gem 'spree', '2.1.1'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
+gem 'spree_related_products', github: 'spree/spree_related_products', branch: '2-1-stable'
+
+# SPREE_GEMS (BY OPENJAF)
+gem 'spree_property_type',        PROTOCOL => "#{SPREE_TRAVEL_PATH}/spree_property_type"
 
 #SPREE_TRAVEL_GEMS
-gem 'spree_property_type', 		  :git => "#{SPREE_TRAVEL_PATH}/spree_property_type"
-gem 'spree_travel_core', 		  :git => "#{SPREE_TRAVEL_PATH}/spree_travel_core"
+gem 'spree_travel_core',           PROTOCOL => "#{SPREE_TRAVEL_PATH}/spree_travel_core"
 
