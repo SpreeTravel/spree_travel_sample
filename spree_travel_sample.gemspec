@@ -5,13 +5,13 @@ versions = yaml['gems']
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_travel_sample'
-  s.version     = '2.0.3'
+  s.version     = versions['spree_travel']
   s.summary     = 'Spree Travel Sample'
   s.description = 'Load sample data'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = 'OpenJAF'
-  s.email     = 'sancho@openjaf.com'
+  s.author    = ['Miguel Sancho','Pedro Quintero',  'Cesar Lage', 'Raul Perez-alejo']
+  s.email     = 'sanchojaf@gmail.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
   #s.files       = `git ls-files`.split("\n")
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> ' + versions['spree']
+  s.add_dependency 'spree_travel_core'
 
   s.add_development_dependency 'capybara', '~> 2.0'
   s.add_development_dependency 'coffee-rails'

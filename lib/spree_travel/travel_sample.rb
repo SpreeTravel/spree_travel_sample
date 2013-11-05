@@ -1,4 +1,4 @@
-module Spree
+module SpreeTravel
   module TravelSample
     def self.load_travel_sample(file)
       path = File.expand_path(travel_samples_path + "#{file}.rb")
