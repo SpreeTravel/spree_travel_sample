@@ -14,8 +14,6 @@ Gem::Specification.new do |s|
   s.email     = 'sanchojaf@gmail.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
-  #s.files       = `git ls-files`.split("\n")
-  #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
