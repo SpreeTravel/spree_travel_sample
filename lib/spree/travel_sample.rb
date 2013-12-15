@@ -1,5 +1,5 @@
 module Spree
-  module Sample
+  module TravelSample
     def self.load_travel_sample(file)
       path = File.expand_path(travel_samples_path + "#{file}.rb")
       # Check to see if the specified file has been loaded before

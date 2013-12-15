@@ -2,7 +2,7 @@ require 'ffaker'
 require 'pathname'
 require 'spree/travel_sample'
 
-namespace :spree_sample do
+namespace :spree_travel_sample do
   desc 'Loads travel sample data'
   task :load => :environment do
     if ARGV.include?("db:migrate")
@@ -17,7 +17,7 @@ Migrations have been run. Please run "rake spree_travel_sample:load" by itself n
       exit(1)
     end
 
-    SpreeSample::Engine.load_travel_samples
+    SpreeTravelSample::Engine.load_travel_samples
   end
 end
 
