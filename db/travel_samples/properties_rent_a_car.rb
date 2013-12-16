@@ -1,7 +1,7 @@
 #encoding: utf-8
 rent_feature = Spree::PropertyType.find_by_name!("Rent Feature")
 
-properties = [
+Spree::Property.create!([
 	{
 		presentation: 'Puertas',
 		name: 'puertas',
@@ -27,9 +27,4 @@ properties = [
 		name: 'combustible',
 		property_type: rent_feature
 	},	
-]
-
-properties.each do |property_attrs|
-  property = Spree::Property.create!(property_attrs, :without_protection => true)
-  puts property.inspect
-end
+])

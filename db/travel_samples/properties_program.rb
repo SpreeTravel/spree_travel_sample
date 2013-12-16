@@ -1,7 +1,7 @@
 #encoding: utf-8
 programs_include = Spree::PropertyType.find_by_name!("Programs Include")
 
-properties = [
+Spree::Property.create!([
 	{
 		presentation: 'Asistencia de MakeTravel Ltd.',
 		name: 'asistencia-de-maketravel',
@@ -167,9 +167,4 @@ properties = [
 		name: 'program-servicio-real',
 		property_type: programs_include
 	}    
-]
-
-properties.each do |property_attrs|
-  property = Spree::Property.create!(property_attrs, :without_protection => true)
-  puts property.inspect
-end
+])

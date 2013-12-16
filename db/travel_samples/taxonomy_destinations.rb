@@ -1,2 +1,2 @@
-taxonomy = Spree::Taxonomy.find_or_create_by_name('Destinations')
+Spree::Taxonomy.create!(:name => "Destinations")
 puts taxonomy.inspect

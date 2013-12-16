@@ -1,4 +1,4 @@
-property_types = [
+Spree::PropertyType.create!([
   {
      name: 'Programs Include',
   },
@@ -32,9 +32,6 @@ property_types = [
   {
      name: 'Transfer Feature',
   },    
-]
+])
 
-property_types.each do |property_type_attrs|
-  property_type = Spree::PropertyType.create!(property_type_attrs, :without_protection => true)
-  puts property_type.inspect
-end
+

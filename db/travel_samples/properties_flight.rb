@@ -1,7 +1,7 @@
 #encoding: utf-8
 flight_feature = Spree::PropertyType.find_by_name!("Flight Feature")
 
-properties = [
+Spree::Property.create!([
 	{
 		presentation: 'Sale',
 		name: 'flight-start-time',
@@ -67,9 +67,4 @@ properties = [
 		name: 'flight-destination-acronimus',
 		property_type: flight_feature
 	}
-]
-
-properties.each do |property_attrs|
-  property = Spree::Property.create!(property_attrs, :without_protection => true)
-  puts property.inspect
-end
+])

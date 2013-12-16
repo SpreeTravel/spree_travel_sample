@@ -3,7 +3,7 @@ hotel_feature = Spree::PropertyType.find_by_name!("Hotel Feature")
 room_amenity = Spree::PropertyType.find_by_name!("Room Amenity")
 room_feature = Spree::PropertyType.find_by_name!("Room Feature")
 
-properties = [
+Spree::Property.create!([
 	{
 		presentation: 'Acceso a internet',
 		name: 'acceso-a-internet',
@@ -309,9 +309,4 @@ properties = [
 		name: 'vista',
 		property_type: room_feature
 	},
-]
-
-properties.each do |property_attrs|
-  property = Spree::Property.create!(property_attrs, :without_protection => true)
-  puts property.inspect
-end
+])

@@ -2,7 +2,7 @@
 tours_feature    = Spree::PropertyType.find_by_name!("Tours Feature")
 
 
-properties = [
+Spree::Property.create!([
 	{
 		presentation: 'Days',
 		name: 'tours-days',
@@ -48,10 +48,4 @@ properties = [
 		name: 'tours-end-time',
 		property_type: tours_feature
 	}
-]
-
-
-properties.each do |property_attrs|
-  property = Spree::Property.create!(property_attrs, :without_protection => true)
-  puts property.inspect
-end
+])
