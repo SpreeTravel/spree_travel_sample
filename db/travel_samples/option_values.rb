@@ -1,20 +1,17 @@
-#Spree::LoadData.load_sample("option_types")
-
 adult 			= Spree::OptionType.find_by_presentation!("Adult")
 child 			= Spree::OptionType.find_by_presentation!("Child")
 infant	 		= Spree::OptionType.find_by_presentation!("Infant")
-pax 			= Spree::OptionType.find_by_presentation!("Pax")
+pax 			  = Spree::OptionType.find_by_presentation!("Pax")
 season 			= Spree::OptionType.find_by_presentation!("Season")
-meal_plan 		= Spree::OptionType.find_by_presentation!("Meal Plan")
-trip 			= Spree::OptionType.find_by_presentation!("Trip")
+meal_plan 	= Spree::OptionType.find_by_presentation!("Meal Plan")
+trip 			  = Spree::OptionType.find_by_presentation!("Trip")
 transmission 	= Spree::OptionType.find_by_presentation!("Transmission")
-duration 		= Spree::OptionType.find_by_presentation!("Duration")
+duration 		  = Spree::OptionType.find_by_presentation!("Duration")
 taxi_confort 	= Spree::OptionType.find_by_presentation!("Confort")
 type_class 		= Spree::OptionType.find_by_presentation!("Class")
 
  
-
-option_values = [
+Spree::OptionValue.create!([
   {
      name: 'adult-0',
      presentation: '0',
@@ -160,9 +157,6 @@ option_values = [
      presentation: 'Economic',
      option_type: type_class,
   }  
-]
+])
 
-option_values.each do |option_value_attrs|
-  opt_value = Spree::OptionValue.create!(option_value_attrs, :without_protection => true)
-  puts opt_value.inspect
-end
+
