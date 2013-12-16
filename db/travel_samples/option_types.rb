@@ -1,4 +1,4 @@
-option_types = [
+Spree::OptionType.create!([
   {  
     name: 'adult',
     presentation: 'Adult',
@@ -56,8 +56,3 @@ option_types = [
   }
 ]
 
-
-option_types.each do |option_type_attrs|
-  opt_type = Spree::OptionType.create!(option_type_attrs, :without_protection => true)
-  puts opt_type   
-end
