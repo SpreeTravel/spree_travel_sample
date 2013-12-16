@@ -54,6 +54,6 @@ Spree::OptionType.create!([
     presentation: 'Class',
     position: 1
   }
-]
+])
 
 
