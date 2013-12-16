@@ -56,3 +56,4 @@ Spree::OptionType.create!([
   }
 ]
 
+
