@@ -38,7 +38,8 @@ module SpreeTravelSample
       
       Spree::TravelSample.load_travel_sample("taxonomy_things_to_do")
       Spree::TravelSample.load_travel_sample("taxons_thing_to_do")      
-      
+
+      Spree::TravelSample.load_travel_sample("products")       
     end
   end
 end
