@@ -53,5 +53,5 @@ taxons.each do |taxon_attrs|
   end
   taxon.save  
   #puts "permalink: #{taxon.permalink} ------and parent_permalink: #{parent_permalink}"
-  puts taxon.inspect
+  #puts taxon.inspect
 end
