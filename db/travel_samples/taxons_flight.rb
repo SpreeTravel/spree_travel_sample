@@ -1,10 +1,5 @@
 #encoding: utf-8
-
 categories = Spree::Taxonomy.find_by_name!("Categories")
-flight_destinations = Spree::Taxonomy.find_by_name!("Flight Destinations")
-things_to_do = Spree::Taxonomy.find_by_name!("Things to do")
-destinations = Spree::Taxonomy.find_by_name!("Destinations")
- 
 
 taxons = [
  {

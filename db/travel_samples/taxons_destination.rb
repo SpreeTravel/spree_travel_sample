@@ -1,7 +1,6 @@
 #encoding: utf-8
 destinations = Spree::Taxonomy.find_by_name!("Destinations")
  
-
 taxons = [
  {
   name: 'Destinations',
