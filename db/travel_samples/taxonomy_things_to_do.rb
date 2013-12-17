@@ -1,2 +1,1 @@
-Spree::Taxonomy.create!("Things to do")
-puts taxonomy.inspect
+Spree::Taxonomy.create!(:name => "Things to do")

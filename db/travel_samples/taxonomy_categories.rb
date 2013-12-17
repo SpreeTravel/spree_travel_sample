@@ -1,2 +1,1 @@
-Spree::Taxonomy.create!(:name => "Categories")
-puts taxonomy.inspect
+Spree::Taxonomy.create!([{:name => "Categories"}])
