@@ -4,6 +4,16 @@ room_amenity = Spree::PropertyType.find_by_name!("Room Amenity")
 room_feature = Spree::PropertyType.find_by_name!("Room Feature")
 
 Spree::Property.create!([
+  {
+		presentation: 'Direccion',
+		name: 'direccion',
+		property_type: hotel_feature
+  },
+  {
+		presentation: 'Estrellas',
+		name: 'estrellas',
+		property_type: hotel_feature
+  },
 	{
 		presentation: 'Acceso a internet',
 		name: 'acceso-a-internet',
