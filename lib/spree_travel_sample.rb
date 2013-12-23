@@ -42,7 +42,11 @@ module SpreeTravelSample
       #temporal because shipping category is a required field to Product model
       Spree::TravelSample.load_travel_sample("shipping_categories")       
 
-      Spree::TravelSample.load_travel_sample("products")       
+      Spree::TravelSample.load_travel_sample("products")  
+      Spree::TravelSample.load_travel_sample("product_properties")
+      Spree::TravelSample.load_travel_sample("product_option_types")    
+           
+
     end
   end
 end
