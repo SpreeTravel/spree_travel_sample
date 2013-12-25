@@ -1,6 +1,6 @@
 products =
   { 
-    "Hotel Ruby on Rails" =>
+    "Ruby on Rails Tote" =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -16,24 +16,7 @@ products =
         'cambio-de-moneda'  => "true",
         'campo-de-golf-proximo'  => "true", 
      },
-    "Hotel Ruby on Rails Bag"  =>
-     {
-        'estrellas' => "5",
-        'acceso-a-internet'  => "true",
-        'aire-acondicionado'  => "true",
-        'alquiler-de-motos'  => "true",
-        'bar'  => "true",
-        'bar-lounge'  => "true",
-        'buffet-para-el-desayuno'  => "true",
-        'buro-de-turismo'  => "true",
-        'cabaret'  => "true",
-        'cafeteria'  => "true",
-        'caja-fuerte'  => "true",
-        'cambio-de-moneda'  => "true",
-        'campo-de-golf-proximo'  => "true", 
-      
-     },
-    "Hotel Ruby on Rails Baseball Jersey"  =>
+    "Ruby on Rails Bag"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -50,7 +33,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Ruby on Rails Jr. Spaghetti"  =>
+    "Ruby on Rails Baseball Jersey"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -67,7 +50,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Ruby on Rails Ringer T-Shirt"  =>
+    "Ruby on Rails Jr. Spaghetti"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -84,7 +67,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Ruby Baseball Jersey"  =>
+    "Ruby on Rails Ringer T-Shirt"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -101,7 +84,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Apache Baseball Jersey"  =>
+    "Ruby Baseball Jersey"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -118,7 +101,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Baseball Jersey"  =>
+    "Apache Baseball Jersey"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -135,7 +118,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Jr. Spaghetti"  =>
+    "Spree Baseball Jersey"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -152,7 +135,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Ringer T-Shirt"  =>
+    "Spree Jr. Spaghetti"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -169,7 +152,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Tote"  =>
+    "Spree Ringer T-Shirt"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -186,7 +169,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Bag"  =>
+    "Spree Tote"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -203,7 +186,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Ruby on Rails Mug"  =>
+    "Spree Bag"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -220,7 +203,7 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Ruby on Rails Stein"  =>
+    "Ruby on Rails Mug"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -237,7 +220,24 @@ products =
         'campo-de-golf-proximo'  => "true", 
       
      },
-    "Hotel Spree Stein"  =>
+    "Ruby on Rails Stein"  =>
+     {
+        'estrellas' => "5",
+        'acceso-a-internet'  => "true",
+        'aire-acondicionado'  => "true",
+        'alquiler-de-motos'  => "true",
+        'bar'  => "true",
+        'bar-lounge'  => "true",
+        'buffet-para-el-desayuno'  => "true",
+        'buro-de-turismo'  => "true",
+        'cabaret'  => "true",
+        'cafeteria'  => "true",
+        'caja-fuerte'  => "true",
+        'cambio-de-moneda'  => "true",
+        'campo-de-golf-proximo'  => "true", 
+      
+     },
+    "Spree Stein"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",
@@ -253,7 +253,7 @@ products =
         'cambio-de-moneda'  => "true",
         'campo-de-golf-proximo'  => "true",       
      },
-    "Hotel Spree Mug"  =>
+    "Spree Mug"  =>
      {
         'estrellas' => "5",
         'acceso-a-internet'  => "true",

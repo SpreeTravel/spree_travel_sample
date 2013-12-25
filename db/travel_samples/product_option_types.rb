@@ -9,25 +9,25 @@ meal_plan = Spree::OptionType.find_by_presentation!('Meal Plan')
 
 
 
-hotels = ["Hotel Ruby on Rails",
-"Hotel Ruby on Rails Bag",
-"Hotel Ruby on Rails Baseball Jersey",
-"Hotel Ruby on Rails Jr. Spaghetti",
-"Hotel Ruby on Rails Ringer T-Shirt",
-"Hotel Ruby Baseball Jersey",
-"Hotel Apache Baseball Jersey",
-"Hotel Spree Baseball Jersey",
-"Hotel Spree Jr. Spaghetti",
-"Hotel Spree Ringer T-Shirt",
-"Hotel Spree Tote",
-"Hotel Spree Bag",
-"Hotel Ruby on Rails Mug",
-"Hotel Ruby on Rails Stein",
-"Hotel Spree Stein",
-"Hotel Spree Mug"]
+hotels = ["Ruby on Rails Tote",
+"Ruby on Rails Bag",
+"Ruby on Rails Baseball Jersey",
+"Ruby on Rails Jr. Spaghetti",
+"Ruby on Rails Ringer T-Shirt",
+"Ruby Baseball Jersey",
+"Apache Baseball Jersey",
+"Spree Baseball Jersey",
+"Spree Jr. Spaghetti",
+"Spree Ringer T-Shirt",
+"Spree Tote",
+"Spree Bag",
+"Ruby on Rails Mug",
+"Ruby on Rails Stein",
+"Spree Stein",
+"Spree Mug"]
 
 hotels.each do |name_hotel|
-  hotel = Spree::Product.find_by_name!(name_hotel)
+  = Spree::Product.find_by_name!(name_hotel)
   hotel.option_types = [adult, child, infant, pax, season, meal_plan]
   hotel.save!
 end

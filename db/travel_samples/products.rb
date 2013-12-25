@@ -7,82 +7,82 @@ default_attrs = {
 
 products = [
   {
-    :name => "Hotel Ruby on Rails",
+    :name => "Ruby on Rails Tote",
     :shipping_category => shipping_category,
     :price => 1599,
-  },
+  }, 
   {
-    :name => "Hotel Ruby on Rails Bag",
+    :name => "Ruby on Rails Bag",
     :shipping_category => shipping_category,
     :price => 22.99,
   },
   {
-    :name => "Hotel Ruby on Rails Baseball Jersey",
+    :name => "Ruby on Rails Baseball Jersey",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Ruby on Rails Jr. Spaghetti",
+    :name => "Ruby on Rails Jr. Spaghetti",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Ruby on Rails Ringer T-Shirt",
+    :name => "Ruby on Rails Ringer T-Shirt",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Ruby Baseball Jersey",
+    :name => "Ruby Baseball Jersey",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Apache Baseball Jersey",
+    :name => "Apache Baseball Jersey",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Spree Baseball Jersey",
+    :name => "Spree Baseball Jersey",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Spree Jr. Spaghetti",
+    :name => "Spree Jr. Spaghetti",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Spree Ringer T-Shirt",
+    :name => "Spree Ringer T-Shirt",
     :shipping_category => shipping_category,
     :price => 19.99,
   },
   {
-    :name => "Hotel Spree Tote",
+    :name => "Spree Tote",
     :shipping_category => shipping_category,
     :price => 15.99,
   },
   {
-    :name => "Hotel Spree Bag",
+    :name => "Spree Bag",
     :shipping_category => shipping_category,
     :price => 22.99,
   },
   {
-    :name => "Hotel Ruby on Rails Mug",
+    :name => "Ruby on Rails Mug",
     :shipping_category => shipping_category,
     :price => 13.99,
   },
   {
-    :name => "Hotel Ruby on Rails Stein",
+    :name => "Ruby on Rails Stein",
     :shipping_category => shipping_category,
     :price => 16.99,
   },
   {
-    :name => "Hotel Spree Stein",
+    :name => "Spree Stein",
     :shipping_category => shipping_category,
     :price => 16.99,
   },
   {
-    :name => "Hotel Spree Mug",
+    :name => "Spree Mug",
     :shipping_category => shipping_category,
     :price => 13.99,
   }

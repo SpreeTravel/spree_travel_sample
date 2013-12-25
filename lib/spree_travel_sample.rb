@@ -45,6 +45,8 @@ module SpreeTravelSample
       Spree::TravelSample.load_travel_sample("products")  
       Spree::TravelSample.load_travel_sample("product_properties")
       Spree::TravelSample.load_travel_sample("product_option_types")    
+      
+      Spree::TravelSample.load_travel_sample("assets")    
            
 
     end
