@@ -144,9 +144,9 @@ images = {
 
 products[:ror_baseball_jersey].variants.each do |variant|
   color = variant.option_value("tshirt-color").downcase
-  main_image = image("ror_baseball_jersey_#{color}", "png")
+  main_image = image("ror_baseball_jersey_#{color}", "jpg")
   variant.images.create!(:attachment => main_image)
-  back_image = image("ror_baseball_jersey_back_#{color}", "png")
+  back_image = image("ror_baseball_jersey_back_#{color}", "jpg")
   if back_image
     variant.images.create!(:attachment => back_image)
   end
