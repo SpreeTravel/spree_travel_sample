@@ -9,8 +9,8 @@ products = [
   {
     :name => "Ruby on Rails Tote",
     :shipping_category => shipping_category,
-    :price => 1599,
-  }, 
+    :price => 15.99,
+  },
   {
     :name => "Ruby on Rails Bag",
     :shipping_category => shipping_category,
@@ -25,6 +25,7 @@ products = [
     :name => "Ruby on Rails Jr. Spaghetti",
     :shipping_category => shipping_category,
     :price => 19.99,
+
   },
   {
     :name => "Ruby on Rails Ringer T-Shirt",
@@ -33,6 +34,7 @@ products = [
   },
   {
     :name => "Ruby Baseball Jersey",
+    :tax_category => clothing,
     :shipping_category => shipping_category,
     :price => 19.99,
   },
@@ -64,7 +66,7 @@ products = [
   {
     :name => "Spree Bag",
     :shipping_category => shipping_category,
-    :price => 22.99,
+    :price => 12.99,
   },
   {
     :name => "Ruby on Rails Mug",

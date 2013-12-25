@@ -82,12 +82,12 @@ images = {
   ],
   products[:apache_baseball_jersey].master => [
     {
-      :attachment => image("apache_baseball", "png")
+      :attachment => image("apache_baseball", "jpg")
     },
   ],
   products[:ruby_baseball_jersey].master => [
     {
-      :attachment => image("ruby_baseball", "png")
+      :attachment => image("ruby_baseball", "jpg")
     },
   ],
   products[:spree_bag].master => [
