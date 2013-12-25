@@ -27,7 +27,7 @@ hotels = ["Ruby on Rails Tote",
 "Spree Mug"]
 
 hotels.each do |name_hotel|
-  = Spree::Product.find_by_name!(name_hotel)
+  hotel = Spree::Product.find_by_name!(name_hotel)
   hotel.option_types = [adult, child, infant, pax, season, meal_plan]
   hotel.save!
 end
