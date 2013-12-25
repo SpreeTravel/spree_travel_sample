@@ -22,7 +22,7 @@ products[:ruby_baseball_jersey] = Spree::Product.find_by_name!("Ruby Baseball Je
 products[:apache_baseball_jersey] = Spree::Product.find_by_name!("Apache Baseball Jersey")
 
 
-def image(name, type="jpeg")
+def image(name, type="jpg")
   images_path = Pathname.new(File.dirname(__FILE__)) + "images"
   path = images_path + "#{name}.#{type}"
   return false if !File.exist?(path)
