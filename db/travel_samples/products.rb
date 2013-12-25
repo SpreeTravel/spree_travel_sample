@@ -34,7 +34,6 @@ products = [
   },
   {
     :name => "Ruby Baseball Jersey",
-    :tax_category => clothing,
     :shipping_category => shipping_category,
     :price => 19.99,
   },
