@@ -15,7 +15,8 @@ module SpreeTravelSample
       Spree::TravelSample.load_travel_sample("product_types")
       Spree::TravelSample.load_travel_sample("property_types")      
       Spree::TravelSample.load_travel_sample("properties_hotel")
-      Spree::TravelSample.load_travel_sample("shipping_categories")       
+      Spree::TravelSample.load_travel_sample("shipping_categories")
+      #Spree::TravelSample.load_travel_sample("product_option_types")         
  
       
       #Properties
@@ -42,7 +43,7 @@ module SpreeTravelSample
       #Spree::TravelSample.load_travel_sample("taxons_destination")
       #Spree::TravelSample.load_travel_sample("taxons_flight_destination")
       #Spree::TravelSample.load_travel_sample("taxons_thing_to_do")      
-      #Spree::TravelSample.load_travel_sample("product_option_types")  
+
       
       #Products Hotel
       Spree::TravelSample.load_travel_sample("hotel_products")  
