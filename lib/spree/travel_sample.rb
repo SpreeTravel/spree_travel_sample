@@ -4,7 +4,7 @@ module Spree
       path = File.expand_path(travel_samples_path + "#{file}.rb")
       # Check to see if the specified file has been loaded before
       if !$LOADED_FEATURES.include?(path)
-        require path
+          require path
         puts "Loaded #{file.titleize} travel samples"
       end
     end

@@ -2,42 +2,36 @@
 hotels      = Spree::Product.all
 rooms       = Spree::OptionValue.where(:option_type_id=>3)
 meal_plans  = Spree::OptionValue.where(:option_type_id=>4)
+adults      = [1..4]
+children    = [0..4]
+seasons     = 2 #4
+rates       = []
 
-rates = [
-  {
-        product: hotels[0], 
-        room_id: rooms[0].id, 
-        start_date: "2014-02-01", 
-        end_date: "2014-04-30", 
-        plan_id: meal_plans[0].id, 
-        adults_one: 34.0, 
-        adults_two: 32.0, 
-        adults_three: 21.0, 
-        children_one: 12.0, 
-        children_two: nil, 
-        adults_extra: nil, 
-        max_adults: 3, 
-        max_children: 1, 
-        children_extra: nil
-  },
-  {
-        product: hotels[0], 
-        room_id: rooms[0].id,
-        start_date: "2014-02-01", 
-        end_date: "2014-04-30", 
-        plan_id: meal_plans[1].id, 
-        adults_one: 36.0, 
-        adults_two: 34.0, 
-        adults_three: 23.0, 
-        children_one: 14.0, 
-        children_two: nil, 
-        adults_extra: nil, 
-        max_adults: 3, 
-        max_children: 1, 
-        children_extra: nil
+for h in hotels
+  rooms.to_a.each_with_index do |r, r_index|
+    meal_plans.to_a.each_with_index do |mp, mp_index|
+          for s in 1..seasons
+                rates << {
+                product: h, 
+                room_id: r.id, 
+                start_date: "2014-01-01".to_date + (s-1)*180, 
+                end_date: "2014-01-01".to_date + (s*180)-1, 
+                plan_id: mp.id, 
+                adults_one: 20 + 4*r_index*mp_index + rand(15), 
+                adults_two: 17 + 3*r_index*mp_index + rand(12), 
+                adults_three: 15 + 2*r_index*mp_index + rand(10), 
+                children_one: 10 + 2*r_index*mp_index + rand(7), 
+                children_two: 8 + 1*r_index*mp_index + rand(5), 
+                adults_extra: 35, 
+                max_adults: 4, 
+                max_children: 3, 
+                children_extra: 15
+                }
+          end
+        end
+  end
+end
 
-  },
-]
 
 rates.each do |rate|
   rate = Spree::RateHotel.create!(rate)

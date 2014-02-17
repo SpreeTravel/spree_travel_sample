@@ -23,49 +23,49 @@ Spree::OptionValue.create!([
   {
     :name => "room-master-suite",
     :presentation => "Master Suite",
-    :position => 1,
+    :position => 4,
     :option_type => room
   },
   {
     :name => "room-junior-suite",
     :presentation => "Junior Suite",
-    :position => 2,
+    :position => 3,
     :option_type => room
   },
   {
     :name => "room-suite",
     :presentation => "Suite",
-    :position => 3,
+    :position => 2,
     :option_type => room,
   },
   {
     :name => "room-standart",
     :presentation => "Standart",
-    :position => 4,
+    :position => 1,
     :option_type => room,
   },
   {
     :name => "plan-all-inclusive",
     :presentation => "AI",
-    :position => 1,
+    :position => 4,
     :option_type => plan
   },
   {
     :name => "plan-american-plan",
     :presentation => "AP",
-    :position => 2,
+    :position => 3,
     :option_type => plan
   },
   {
     :name => "plan-modified-american-plan",
     :presentation => "MAP",
-    :position => 3,
+    :position => 2,
     :option_type => plan
   },
   {
     :name => "plan-continental-breakfast",
     :presentation => "CP",
-    :position => 4,
+    :position => 1,
     :option_type => plan
   },
   {
