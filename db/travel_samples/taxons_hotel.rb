@@ -9,27 +9,27 @@ taxons = [
   position: 0 
  },
  {
-  name: 'Hotels',
+  name: 'Hotel',
   taxonomy: categories,
-  permalink: 'categories/hotels',
+  permalink: 'categories/hotel',
   position: 12
  },
  {
   name: 'City',
   taxonomy: categories,
-  permalink: 'categories/hotels/city',  
+  permalink: 'categories/hotel/city',  
   position: 21
  },
  {
   name: 'Beach',
   taxonomy: categories,
-  permalink: 'categories/hotels/beach',
+  permalink: 'categories/hotel/beach',
   position: 22
  },
  {
   name: 'Natural',
   taxonomy: categories,
-  permalink: 'categories/hotels/natural',
+  permalink: 'categories/hotel/natural',
   position: 23
  },
 ]  

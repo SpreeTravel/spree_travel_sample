@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_travel_sample'
   s.version     = versions['spree_travel']
   s.summary     = 'Spree Travel Sample'
-  s.description = 'Load sample data'
+  s.description = 'Load travel sample data'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo']
