@@ -1,8 +1,8 @@
 hotels      = Spree::Product.all
 rooms       = Spree::OptionValue.where(:option_type_id=>3)
 meal_plans  = Spree::OptionValue.where(:option_type_id=>4)
-adults      = [1..2]
-children    = [0..1]
+adults      = [1..4]
+children    = [0..3]
 seasons     = 2 #4
 rates       = []
 

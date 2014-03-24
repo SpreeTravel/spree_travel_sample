@@ -1,119 +1,103 @@
-#Spree::Sample.load_sample("option_types")
-
-start_date = Spree::OptionType.find_by_presentation!("Start Date")
-end_date = Spree::OptionType.find_by_presentation!("End Date")
-room = Spree::OptionType.find_by_presentation!("Room")
-plan = Spree::OptionType.find_by_presentation!("Plan")
-adult = Spree::OptionType.find_by_presentation!("Adult")
-child = Spree::OptionType.find_by_presentation!("Child")
+room = Spree::OptionType.find_by_name!("room")
+plan = Spree::OptionType.find_by_name!("plan")
+adult = Spree::OptionType.find_by_name!("adult")
+child = Spree::OptionType.find_by_name!("child")
 
 Spree::OptionValue.create!([
   {
-    :name => "2014-02-01",
-    :presentation => "2014-02-01",
-    :position => 1,
-    :option_type => start_date
-  },
-  {
-    :name => "2014-04-30",
-    :presentation => "2014-04-30",
-    :position => 2,
-    :option_type => end_date
-  },
-  {
-    :name => "room-master-suite",
-    :presentation => "Master Suite",
-    :position => 4,
-    :option_type => room
-  },
-  {
-    :name => "room-junior-suite",
-    :presentation => "Junior Suite",
-    :position => 3,
-    :option_type => room
+    :name => "room-standard",
+    :presentation => "Standard",
+    :option_type => room,
+    :position => room.position
   },
   {
     :name => "room-suite",
     :presentation => "Suite",
-    :position => 2,
     :option_type => room,
+    :position => room.position
   },
   {
-    :name => "room-standart",
-    :presentation => "Standart",
-    :position => 1,
+    :name => "room-junior-suite",
+    :presentation => "Junior Suite",
     :option_type => room,
+    :position => room.position
   },
   {
-    :name => "plan-all-inclusive",
-    :presentation => "AI",
-    :position => 4,
-    :option_type => plan
-  },
-  {
-    :name => "plan-american-plan",
-    :presentation => "AP",
-    :position => 3,
-    :option_type => plan
-  },
-  {
-    :name => "plan-modified-american-plan",
-    :presentation => "MAP",
-    :position => 2,
-    :option_type => plan
+    :name => "room-master-suite",
+    :presentation => "Master Suite",
+    :option_type => room,
+    :position => room.position
   },
   {
     :name => "plan-continental-breakfast",
     :presentation => "CP",
-    :position => 1,
-    :option_type => plan
+    :option_type => plan,
+    :position => plan.position
+  },
+  {
+    :name => "plan-modified-american-plan",
+    :presentation => "MAP",
+    :option_type => plan,
+    :position => plan.position
+  },
+  {
+    :name => "plan-american-plan",
+    :presentation => "AP",
+    :option_type => plan,
+    :position => plan.position
+  },
+  {
+    :name => "plan-all-inclusive",
+    :presentation => "AI",
+    :option_type => plan,
+    :position => plan.position
   },
   {
     :name => "adult-1",
     :presentation => "1",
-    :position => 1,
-    :option_type => adult
+    :option_type => adult,
+    :position => adult.position
   },
   {
     :name => "adult-2",
     :presentation => "2",
-    :position => 2,
-    :option_type => adult
+    :option_type => adult,
+    :position => adult.position
   },
   {
     :name => "adult-3",
     :presentation => "3",
-    :position => 3,
-    :option_type => adult
+    :option_type => adult,
+    :position => adult.position
   },
   {
     :name => "adult-4",
     :presentation => "4",
-    :position => 4,
-    :option_type => adult
+    :option_type => adult,
+    :position => adult.position
+  },
+  {
+    :name => "child-0",
+    :presentation => "0",
+    :option_type => child,
+    :position => child.position
   },
   {
     :name => "child-1",
     :presentation => "1",
-    :position => 1,
-    :option_type => child
+    :option_type => child,
+    :position => child.position
   },
   {
     :name => "child-2",
     :presentation => "2",
-    :position => 2,
-    :option_type => child
+    :option_type => child,
+    :position => child.position
   },
   {
     :name => "child-3",
     :presentation => "3",
-    :position => 3,
-    :option_type => child
-  },
-  {
-    :name => "child-4",
-    :presentation => "4",
-    :position => 4,
-    :option_type => child
-  }      
+    :option_type => child,
+    :position => child.position
+  }
 ])
