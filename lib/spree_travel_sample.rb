@@ -33,7 +33,7 @@ module SpreeTravelSample
       #Spree::TravelSample.load_travel_sample("taxonomy_things_to_do")
             
       #Taxon
-      Spree::TravelSample.load_travel_sample("taxons")  
+      Spree::TravelSample.load_travel_sample("taxons_hotel")  
       #Spree::TravelSample.load_travel_sample("taxon_category")
       #Spree::TravelSample.load_travel_sample("taxons_flight")            
       #Spree::TravelSample.load_travel_sample("taxons_program")      
