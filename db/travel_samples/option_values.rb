@@ -103,6 +103,6 @@ option_values = [
 ]
 
 
-option_values.each do |option_value|
+option_values.each do |option_value_attrs|
   Spree::OptionValue.find_or_create_by_name(option_value_attrs)
 end
