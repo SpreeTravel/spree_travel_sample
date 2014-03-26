@@ -3,7 +3,7 @@ plan = Spree::OptionType.find_by_name!("plan")
 adult = Spree::OptionType.find_by_name!("adult")
 child = Spree::OptionType.find_by_name!("child")
 
-Spree::OptionValue.create!([
+option_values = [
   {
     :name => "room-standard",
     :presentation => "Standard",
@@ -100,4 +100,9 @@ Spree::OptionValue.create!([
     :option_type => child,
     :position => child.position
   }
-])
+]
+
+
+option_values.each do |option_value|
+  Spree::OptionValue.find_or_create_by_name(option_value_attrs)
+end

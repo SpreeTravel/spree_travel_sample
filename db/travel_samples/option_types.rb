@@ -1,4 +1,4 @@
-Spree::OptionType.create!([
+option_types = [
   {
     :name => "start_date",
     :presentation => "Start Date",
@@ -29,4 +29,8 @@ Spree::OptionType.create!([
     :presentation => "Child",
     :position => 6
   }
-])
+]
+
+option_types.each do |option_type_attrs|
+  Spree::OptionType.find_or_create_by_name(option_type_attrs)
+end

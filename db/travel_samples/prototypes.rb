@@ -6,6 +6,7 @@ prototypes = [
 ]
 
 prototypes.each do |prototype_attrs|
+  next if Spree::Prototype.find_by_name(prototype_attrs[:name])
   prototype = Spree::Prototype.create!(:name => prototype_attrs[:name])
   prototype_attrs[:option_types].each do |ot|
     prototype.option_types << Spree::OptionType.find_by_name!(ot)
