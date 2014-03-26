@@ -1,57 +1,40 @@
-#encoding: utf-8
 categories = Spree::Taxonomy.find_by_name!("Categories")
- 
+
 taxons = [
- {
-  name: 'categories',
-  taxonomy: categories,
-  permalink: 'categories',
-  position: 0 
- },
- {
-  name: 'Hotel',
-  taxonomy: categories,
-  permalink: 'categories/hotel',
-  position: 12
- },
- {
-  name: 'City',
-  taxonomy: categories,
-  permalink: 'categories/hotel/city',  
-  position: 21
- },
- {
-  name: 'Beach',
-  taxonomy: categories,
-  permalink: 'categories/hotel/beach',
-  position: 22
- },
- {
-  name: 'Natural',
-  taxonomy: categories,
-  permalink: 'categories/hotel/natural',
-  position: 23
- },
-]  
-  
+  {
+    :name => "Categories",
+    :taxonomy => categories,
+    :position => 0
+  },
+  {
+    :name => "Hotel",
+    :taxonomy => categories,
+    :parent => "Categories",
+    :position => 1
+  },
+  {
+    :name => "City",
+    :taxonomy => categories,
+    :parent => "Hotel",
+    :position => 2
+  },
+  {
+    :name => "Beach",
+    :taxonomy => categories,
+    :parent => "Hotel",
+    :position => 2
+  },
+  {
+    :name => "Natural",
+    :taxonomy => categories,
+    :parent => "Hotel",
+    :position => 2
+  },
+]
+
 taxons.each do |taxon_attrs|
-  taxon = Spree::Taxon.find_or_create_by_permalink(taxon_attrs[:permalink])
-  taxon.taxonomy = taxon_attrs[:taxonomy]
-  taxon.name = taxon_attrs[:name]
-  
-  
-  split_permalink = taxon_attrs[:permalink].split("/")
-  parent_permalink ="" 
-  
-  if split_permalink.length > 1
-      parent_permalink += split_permalink[0]
-	  for i in 1..split_permalink.length-2
-		parent_permalink += "/#{split_permalink[i]}" 		
-	  end
-	  parent_taxon = Spree::Taxon.find_by_permalink(parent_permalink)
-	  taxon.parent = parent_taxon	  
+  if taxon_attrs[:parent]
+    taxon_attrs[:parent] = Spree::Taxon.find_by_name!(taxon_attrs[:parent])
+    Spree::Taxon.find_or_create_by_name(taxon_attrs)
   end
-  taxon.save  
-  #puts "permalink: #{taxon.permalink} ------and parent_permalink: #{parent_permalink}"
-  #puts taxon.inspect
 end
