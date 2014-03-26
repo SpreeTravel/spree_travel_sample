@@ -16,7 +16,7 @@ seasons = 2
 
 hotels = Spree::Product.all
 
-hotels[1..1].each do |hotel|
+hotels.each do |hotel|
   rooms.to_a.each_with_index do |room, room_index|
     plans.to_a.each_with_index do |plan, plan_index|
       for s in 1..seasons
