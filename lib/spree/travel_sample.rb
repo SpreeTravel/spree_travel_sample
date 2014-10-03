@@ -1,17 +1,22 @@
+require "colored"
+
 module Spree
   module TravelSample
-    def self.load_travel_sample(file)
-      path = File.expand_path(travel_samples_path + "#{file}.rb")
-      # Check to see if the specified file has been loaded before
+
+    def self.load_travel_sample(dir, file)
+      path = File.join(travel_samples_path, dir, "#{file}.rb")
       if !$LOADED_FEATURES.include?(path)
-          require path
-        puts "Loaded #{file.titleize} travel samples"
+        require path
+        puts "- #{file.titleize} loaded successfully".green
+      else
+        puts "- #{file.titleize} already loaded".yellow
       end
     end
 
     private
-      def self.travel_samples_path
-        Pathname.new(File.join(File.dirname(__FILE__), '..', '..', 'db', 'travel_samples'))
-      end
+
+    def self.travel_samples_path
+      Pathname.new(File.join(File.dirname(__FILE__), '..', '..', 'db', 'travel_samples'))
+    end
   end
 end

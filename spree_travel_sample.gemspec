@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> ' + versions['spree']
+  s.add_dependency 'colored'
   #s.add_dependency 'spree_travel_core'
 
   s.add_development_dependency 'capybara', '~> 2.0'
