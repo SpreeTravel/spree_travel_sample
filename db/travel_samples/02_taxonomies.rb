@@ -1,6 +1,8 @@
 $taxonomies = [
-  { :name => "Place", :position => 1 },
+  { :name => "Destination", :position => 1 },
   { :name => "Category", :position => 2 },
+  { :name => "Flight Destination", :position => 3 },
+  { :name => "Thing to do", :position => 4 },
 ]
 
 Spree::Taxonomy.destroy_all
