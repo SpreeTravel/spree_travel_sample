@@ -9,6 +9,7 @@ module SpreeTravelSample
       {
         'common' => [
           'shipping_categories',
+          'taxonomies'
         ],
         'hotel' => [
 
