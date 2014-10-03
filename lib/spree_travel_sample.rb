@@ -11,9 +11,15 @@ module SpreeTravelSample
           'shipping_categories',
           'taxonomies'
         ],
-        'hotel' => [
+        'hotels' => [
 
-        ]
+        ],
+        'flight' => [
+          'taxonomies',
+        ],
+        'points' => [
+          'taxonomies',
+        ],
       }
 
       #General
@@ -29,13 +35,6 @@ module SpreeTravelSample
       #Spree::TravelSample.load_travel_sample("properties_rent_a_car")
       #Spree::TravelSample.load_travel_sample("properties_tour")
       #Spree::TravelSample.load_travel_sample("properties_transfer")
-
-      #Taxonomy
-      #Spree::TravelSample.load_travel_sample("taxonomies")
-      #Spree::TravelSample.load_travel_sample("taxonomy_categories")
-      #Spree::TravelSample.load_travel_sample("taxonomy_destinations")
-      #Spree::TravelSample.load_travel_sample("taxonomy_flight_destinations")
-      #Spree::TravelSample.load_travel_sample("taxonomy_things_to_do")
 
       #Taxon
       #Spree::TravelSample.load_travel_sample("taxons_hotel")

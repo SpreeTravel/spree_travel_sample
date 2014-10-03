@@ -6,10 +6,10 @@ module Spree
     def self.load_travel_sample(dir, file)
       path = File.join(travel_samples_path, dir, "#{file}.rb")
       if !$LOADED_FEATURES.include?(path)
-        puts "[#{file.titleize}] Loading ...".yellow.bold
+        puts "[#{dir}/#{file}] Loading ...".yellow.bold
         require path
       else
-        puts "[#{file.titleize}] Already Loaded".yellow
+        puts "[#{dir}/#{file}] Already Loaded".yellow
       end
     end
 
