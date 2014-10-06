@@ -10,7 +10,8 @@ module SpreeTravelSample
         'common' => [
           'shipping_categories',
           'taxonomies',
-          'taxons'
+          'taxons',
+          'property_types',
         ],
         'hotels' => [
           'taxons'
@@ -29,9 +30,6 @@ module SpreeTravelSample
       }
 
       #General
-      #Spree::TravelSample.load_travel_sample("prototypes")
-      #Spree::TravelSample.load_travel_sample("product_types")
-      #Spree::TravelSample.load_travel_sample("property_types")
       #Spree::TravelSample.load_travel_sample("product_option_types")
 
 

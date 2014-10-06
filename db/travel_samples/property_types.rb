@@ -22,16 +22,16 @@ Spree::PropertyType.create!([
   },
   {
      name: 'Room Amenity',
-  },  
+  },
   {
      name: 'Room Feature',
-  },  
+  },
   {
      name: 'Rent Feature',
-  },  
+  },
   {
      name: 'Transfer Feature',
-  },    
+  },
 ])
 
 
