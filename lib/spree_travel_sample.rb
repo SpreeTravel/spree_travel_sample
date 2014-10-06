@@ -13,13 +13,15 @@ module SpreeTravelSample
           'taxons'
         ],
         'hotels' => [
-
+          'taxons'
         ],
         'flight' => [
           'taxonomies',
+          'taxons',
         ],
         'points' => [
           'taxonomies',
+          'taxons',
         ],
       }
 
