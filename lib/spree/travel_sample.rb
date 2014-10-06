@@ -13,6 +13,16 @@ module Spree
       end
     end
 
+    def self.create_taxon(hash)
+      if hash[:parent]
+        taxon_attrs[:parent] = Spree::Taxon.find_by_name!(taxon_attrs[:parent])
+      end
+      if hash[:taxonomy]
+        taxon_attrs = Spree::Taxonony.find_by_name!(taxon_attrs[:taxonomy])
+      end
+      Spree::Taxon.find_or_create_by_name(taxon_attrs)
+    end
+
     private
 
     def self.travel_samples_path
