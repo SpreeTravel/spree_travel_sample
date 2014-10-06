@@ -23,6 +23,9 @@ module SpreeTravelSample
           'taxonomies',
           'taxons',
         ],
+        'cars' => [
+          'taxons',
+        ]
       }
 
       #General
@@ -40,14 +43,10 @@ module SpreeTravelSample
       #Spree::TravelSample.load_travel_sample("properties_transfer")
 
       #Taxon
-      #Spree::TravelSample.load_travel_sample("taxons_hotel")
-      #Spree::TravelSample.load_travel_sample("taxon_category")
       #Spree::TravelSample.load_travel_sample("taxons_flight")
       #Spree::TravelSample.load_travel_sample("taxons_program")
       #Spree::TravelSample.load_travel_sample("taxons_tour")
       #Spree::TravelSample.load_travel_sample("taxons_transfer")
-      #Spree::TravelSample.load_travel_sample("taxons_car_rental")
-      #Spree::TravelSample.load_travel_sample("taxons_destination")
       #Spree::TravelSample.load_travel_sample("taxons_flight_destination")
       #Spree::TravelSample.load_travel_sample("taxons_thing_to_do")
 
