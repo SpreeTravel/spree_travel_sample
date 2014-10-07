@@ -1,6 +1,6 @@
 ### This is the data
 properties = {
-  :services => {
+  'Hotel Services' => {
     'breakfast' => 'Breakfast',
     'lunch' => 'Lunch & Dinner',
     'taxi' => 'Taxi',
@@ -10,7 +10,7 @@ properties = {
     'wifi' => 'Wifi',
     'phone' => 'Phone Available'
   },
-  :include => {
+  'Hotel Features' => {
     'multilingual' => 'Multilingual Staff',
     'satellite' => 'Satellite TV',
     'dvd' => 'DVD Player',
@@ -36,26 +36,13 @@ properties = {
     'jacuzzi' => 'Jacuzzi',
     'coffee' => 'Coffee Maker',
   },
-  :features => {
-    'tours' => 'Guided Tours in the City',
-    'hammock' => 'Hammock',
-    'rooms' => 'Rooms',
-    'room_type' => 'Room Type',
-    'privacy' => 'Privacy',
-  }
 }
-
-### Deleting Properties
-Spree::Property.delete_all
-Spree::ProductProperty.delete_all
-
-
 ### Creating Properties
 properties.keys.each do |type|
-  pt = Spree::PropertyType.find_by_name(type)
+  pt = Spree::PropertyType.find_by_name(type) rescue nil
   hash = properties[type]
   hash.each do |key, value|
-    attrs = { :name => key, :presentation => value }
+    attrs = { :name => key, :presentation => value } # TODO: adicionar aqui las property types cuando sean dependencia
     prop = Spree::Property.create(attrs)
   end
 end
