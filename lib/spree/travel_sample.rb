@@ -13,14 +13,14 @@ module Spree
       end
     end
 
-    def self.create_taxon(hash)
-      if hash[:parent]
+    def self.create_taxon(taxon_attrs)
+      if taxon_attrs[:parent]
         taxon_attrs[:parent] = Spree::Taxon.find_by_name!(taxon_attrs[:parent])
       end
-      if hash[:taxonomy]
-        taxon_attrs = Spree::Taxonony.find_by_name!(taxon_attrs[:taxonomy])
+      if taxon_attrs[:taxonomy]
+        taxon_attrs = Spree::Taxonomy.find_by_name!(taxon_attrs[:taxonomy])
       end
-      Spree::Taxon.find_or_create_by_name(taxon_attrs)
+      Spree::Taxon.where(:name => taxon_attrs[:name]).first_or_create(taxon_attrs)
     end
 
     private

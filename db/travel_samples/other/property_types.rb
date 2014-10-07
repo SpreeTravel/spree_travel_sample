@@ -18,15 +18,6 @@ Spree::PropertyType.create!([
      name: 'General Services',
   },
   {
-     name: 'Hotel Feature',
-  },
-  {
-     name: 'Room Amenity',
-  },
-  {
-     name: 'Room Feature',
-  },
-  {
      name: 'Rent Feature',
   },
   {

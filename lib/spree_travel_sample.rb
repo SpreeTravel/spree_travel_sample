@@ -11,12 +11,13 @@ module SpreeTravelSample
           'shipping_categories',
           'taxonomies',
           'taxons',
-          'property_types',
+          #'property_types',
         ],
         'hotels' => [
-          'taxons'
+          'taxons',
+          'property_types',
         ],
-        'flight' => [
+        'flights' => [
           'taxonomies',
           'taxons',
         ],
@@ -31,7 +32,6 @@ module SpreeTravelSample
 
       #General
       #Spree::TravelSample.load_travel_sample("product_option_types")
-
 
       #Properties
       #Spree::TravelSample.load_travel_sample("properties_flight")
