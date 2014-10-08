@@ -9,11 +9,7 @@ shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
 amount_of_fake_products = 20
 available_on = Time.now - 1.day
-
-### Deleting Stuff
-Spree::Product.delete_all
-Spree::Variant.delete_all
-Spree::Price.delete_all
+product_type = Spree::ProductType.where(:name => 'hotel')
 
 ### Creating Products
 amount_of_fake_products.times do
@@ -30,6 +26,7 @@ amount_of_fake_products.times do
     :sku => the_sku,
     :shipping_category_id => shipping_category.id,
     :available_on => available_on,
+    :product_type_id => product_type.id,
   )
   the_properties.each do |property|
     Spree::ProductProperty.create(
