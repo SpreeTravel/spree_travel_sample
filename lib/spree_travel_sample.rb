@@ -17,6 +17,8 @@ module SpreeTravelSample
           'taxons',
           #'property_types',
           'properties',
+          'products',
+          'rates',
         ],
         'flights' => [
           'taxonomies',

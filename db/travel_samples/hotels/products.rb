@@ -37,6 +37,5 @@ amount_of_fake_products.times do
   end
   product.taxons = the_taxons
   product.generate_variants
-
 end
 
