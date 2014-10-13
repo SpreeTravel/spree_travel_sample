@@ -17,8 +17,8 @@ module Spree
       if Spree::ShippingCategory.where(:name => shipping_attrs[:name]).first
         puts "skipped: ".yellow + "ShippingCategory: #{shipping_attrs[:name]}"
       else
-        Spree::ShippingCategory.create!(:name => shipping_attr[:name])
-        puts "created: ".green + "ShippingCategory: #{shipping_attr[:name]}"
+        Spree::ShippingCategory.create!(:name => shipping_attrs[:name])
+        puts "created: ".green + "ShippingCategory: #{shipping_attrs[:name]}"
       end
     end
 
@@ -36,7 +36,7 @@ module Spree
         puts "skipped: ".yellow + "Taxon: #{taxon_attrs[:name]}"
       else
         taxon = Spree::Taxon.create(taxon_attrs)
-        puts "created: ".green + "Taxon: #{taxon_attr[:name]}"
+        puts "created: ".green + "Taxon: #{taxon_attrs[:name]}"
       end
       taxon
     end
@@ -47,7 +47,7 @@ module Spree
         puts "skipped: ".yellow + "Taxonomy: #{taxonomy_attrs[:name]}"
       else
         taxonomy = Spree::Taxonomy.create(taxonomy_attrs)
-        puts "created: ".green + "Taxonomy: #{taxonomy_attr[:name]}"
+        puts "created: ".green + "Taxonomy: #{taxonomy_attrs[:name]}"
       end
       taxonomy
     end
@@ -57,10 +57,26 @@ module Spree
       if property
         puts "skipped: ".yellow + "Property: #{property_attrs[:name]}"
       else
-        taxon = Spree::Property.create(property_attrs)
-        puts "created: ".green + "Property: #{property_attr[:name]}"
+        property = Spree::Property.create(property_attrs)
+        puts "created: ".green + "Property: #{property_attrs[:name]}"
       end
-      taxon
+      property
+    end
+
+    def self.create_product(product_attrs)
+      product = Spree::Product.where(:name => product_attrs[:name]).first
+      if product
+        puts "skipped: ".yellow + "Product: #{product_attrs[:name]}"
+      else
+        product = Spree::Product.create(product_attrs)
+        puts "created: ".green + "Product: #{product_attrs[:name]}"
+      end
+      product
+    end
+
+    def self.create_product_properties(product_properties_attrs)
+      pp = Spree::ProductProperty.create(product_properties_attrs)
+      puts "  - created: ".green + "ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
     end
 
     private
