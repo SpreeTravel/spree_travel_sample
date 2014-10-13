@@ -1,6 +1,7 @@
-if Spree::ShippingCategory.where(:name => 'Default').first
-  puts "skipped: ".yellow + "ShippingCategory: Default"
-else
-  Spree::ShippingCategory.create!(:name => 'Default')
-  puts "created: ".green + "ShippingCategory: Default"
+shipping_attrs = [
+  {:name => 'Default'}
+]
+
+for attrs in shipping_attrs
+  Spree::TravelSample.create_shipping_category(attrs)
 end

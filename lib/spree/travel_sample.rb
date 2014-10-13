@@ -13,6 +13,15 @@ module Spree
       end
     end
 
+    def self.create_shipping_category(shipping_attrs)
+      if Spree::ShippingCategory.where(:name => shipping_attrs[:name]).first
+        puts "skipped: ".yellow + "ShippingCategory: #{shipping_attrs[:name]}"
+      else
+        Spree::ShippingCategory.create!(:name => shipping_attr[:name])
+        puts "created: ".green + "ShippingCategory: #{shipping_attr[:name]}"
+      end
+    end
+
     def self.create_taxon(taxon_attrs)
       if taxon_attrs[:parent]
         taxon_attrs[:parent_id] = Spree::Taxon.where(:name => taxon_attrs[:parent]).first.id
@@ -23,7 +32,12 @@ module Spree
         taxon_attrs.delete(:taxonomy)
       end
       taxon = Spree::Taxon.where(:name => taxon_attrs[:name]).first
-      taxon = Spree::Taxon.create(taxon_attrs) unless taxon
+      if taxon
+        puts "skipped: ".yellow + "Taxon: #{taxon_attrs[:name]}"
+      else
+        taxon = Spree::Taxon.create(taxon_attrs)
+        puts "created: ".green + "Taxon: #{taxon_attr[:name]}"
+      end
       taxon
     end
 
