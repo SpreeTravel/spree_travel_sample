@@ -46,8 +46,19 @@ module Spree
       if taxonomy
         puts "skipped: ".yellow + "Taxonomy: #{taxonomy_attrs[:name]}"
       else
-        taxon = Spree::Taxonomy.create(taxonomy_attrs)
+        taxonomy = Spree::Taxonomy.create(taxonomy_attrs)
         puts "created: ".green + "Taxonomy: #{taxonomy_attr[:name]}"
+      end
+      taxonomy
+    end
+
+    def self.create_property(property_attrs)
+      property = Spree::Property.where(:name => property_attrs[:name]).first
+      if property
+        puts "skipped: ".yellow + "Property: #{property_attrs[:name]}"
+      else
+        taxon = Spree::Property.create(property_attrs)
+        puts "created: ".green + "Property: #{property_attr[:name]}"
       end
       taxon
     end
