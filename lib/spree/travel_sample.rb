@@ -15,12 +15,16 @@ module Spree
 
     def self.create_taxon(taxon_attrs)
       if taxon_attrs[:parent]
-        taxon_attrs[:parent] = Spree::Taxon.find_by_name!(taxon_attrs[:parent])
+        taxon_attrs[:parent_id] = Spree::Taxon.where(:name => taxon_attrs[:parent]).first.id
+        taxon_attrs.delete(:parent)
       end
       if taxon_attrs[:taxonomy]
-        taxon_attrs = Spree::Taxonomy.find_by_name!(taxon_attrs[:taxonomy])
+        taxon_attrs[:taxonomy_id] = Spree::Taxonomy.find_by_name!(taxon_attrs[:taxonomy]).id
+        taxon_attrs.delete(:taxonomy)
       end
-      Spree::Taxon.where(:name => taxon_attrs[:name]).first_or_create(taxon_attrs)
+      taxon = Spree::Taxon.where(:name => taxon_attrs[:name]).first
+      taxon = Spree::Taxon.create(taxon_attrs) unless taxon
+      taxon
     end
 
     private

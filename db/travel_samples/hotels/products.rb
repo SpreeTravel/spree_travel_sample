@@ -1,5 +1,5 @@
 ### Some Global Variables
-place_taxonomy = Spree::Taxonomy.find_by_name('Place')
+place_taxonomy = Spree::Taxonomy.find_by_name('Destination')
 place_taxons = Spree::Taxon.where(:taxonomy_id => place_taxonomy.id).to_a
 place_taxons.shift
 category_taxonomy = Spree::Taxonomy.find_by_name('Category')
@@ -9,7 +9,7 @@ shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
 amount_of_fake_products = 20
 available_on = Time.now - 1.day
-product_type = Spree::ProductType.where(:name => 'hotel')
+product_type = Spree::ProductType.where(:name => 'hotel').first
 
 ### Creating Products
 amount_of_fake_products.times do
