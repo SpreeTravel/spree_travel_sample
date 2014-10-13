@@ -4,5 +4,5 @@ taxonomies = [
 ]
 
 taxonomies.each do |taxonomy_attrs|
-  tx = Spree::Taxonomy.where(:name => taxonomy_attrs[:name]).first_or_create(taxonomy_attrs)
+  Spree::TravelSample.create_taxonomy(taxonomy_attrs)
 end

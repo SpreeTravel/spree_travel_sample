@@ -41,6 +41,17 @@ module Spree
       taxon
     end
 
+    def self.create_taxonomy(taxonomy_attrs)
+      taxonomy = Spree::Taxonomy.where(:name => taxonomy_attrs[:name]).first
+      if taxonomy
+        puts "skipped: ".yellow + "Taxonomy: #{taxonomy_attrs[:name]}"
+      else
+        taxon = Spree::Taxonomy.create(taxonomy_attrs)
+        puts "created: ".green + "Taxonomy: #{taxonomy_attr[:name]}"
+      end
+      taxon
+    end
+
     private
 
     def self.travel_samples_path
