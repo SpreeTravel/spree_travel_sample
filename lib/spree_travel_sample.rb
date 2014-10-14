@@ -21,15 +21,15 @@ module SpreeTravelSample
           'rates',
         ],
         'flights' => [
-          'taxonomies',
-          'taxons',
+          #'taxonomies',
+          #'taxons',
         ],
         'points' => [
-          'taxonomies',
-          'taxons',
+          #'taxonomies',
+          #'taxons',
         ],
         'cars' => [
-          'taxons',
+          #'taxons',
         ]
       }
 

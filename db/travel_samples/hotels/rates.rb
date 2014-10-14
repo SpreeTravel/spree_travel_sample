@@ -11,10 +11,10 @@ def price(base, multiplier, adder)
 end
 
 for hotel in hotels
-  for room in hotel.variants[0,2] # HERE
+  for room in hotel.variants
     for year in 1..years
       for season in 1..seasons
-        for plan in plans [0,2] # HERE
+        for plan in plans
           start_date = "2014-01-01".to_date + (year - 1) * 365 + (season - 1) * (365 / seasons)
           end_date = "2014-01-01".to_date + (year - 1) * 365 + season * (365 / seasons) - 1
 

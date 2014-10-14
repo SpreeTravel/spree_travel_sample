@@ -7,10 +7,12 @@ category_taxons = Spree::Taxon.where(:taxonomy_id => category_taxonomy.id).to_a
 category_taxons.shift
 shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
-amount_of_fake_products = 2 # HERE
+amount_of_fake_products = 3 # HERE
 available_on = Time.now - 1.day
 product_type = Spree::ProductType.where(:name => 'hotel').first
+hotel_calculator = Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')
 
+### Destroying Products
 hotels = Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel')).destroy_all
 
 ### Creating Products
@@ -29,6 +31,7 @@ amount_of_fake_products.times do
     :shipping_category_id => shipping_category.id,
     :available_on => available_on,
     :product_type_id => product_type.id,
+    :calculator_id => hotel_calculator.id,
   }
   product = Spree::TravelSample.create_product(product_attrs)
 
