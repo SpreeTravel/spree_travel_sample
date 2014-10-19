@@ -12,14 +12,15 @@ Gem::Specification.new do |s|
   s.description = 'Load travel sample data'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo']
-  s.email     = 'sanchojaf@gmail.com'
+  s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo', 'Alejandro Dustet']
+  s.email     = 'pecuerre@gmail.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
   s.require_path = 'lib'
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> ' + versions['spree']
+  s.add_dependency 'colored'
   #s.add_dependency 'spree_travel_core'
 
   s.add_development_dependency 'capybara', '~> 2.0'
