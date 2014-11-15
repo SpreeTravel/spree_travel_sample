@@ -3,10 +3,10 @@ place_taxonomy = Spree::Taxonomy.find_by_name('Destination')
 place_taxons = Spree::Taxon.where(:taxonomy_id => place_taxonomy.id).to_a
 place_taxons.shift
 category_taxonomy = Spree::Taxonomy.find_by_name('Category')
-category_taxons = Spree::Taxon.where(:taxonomy_id => category_taxonomy.id).where(:name => 'Package').first.self_and_descendant.to_a
+category_taxons = Spree::Taxon.where(:taxonomy_id => category_taxonomy.id).where(:name => 'Package').first.self_and_descendants.to_a
 shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
-amount_of_fake_products = 3 # HERE
+amount_of_fake_products = 5 # HERE
 available_on = Time.now - 1.day
 product_type = Spree::ProductType.where(:name => 'package').first
 package_calculator = Spree::TravelCalculator.find_by_name('Spree::CalculatorPackage')
@@ -18,7 +18,7 @@ packages = Spree::Product.where(:product_type => Spree::ProductType.find_by_name
 amount_of_fake_products.times do
   the_properties = (1..rand(properties.length)).map { properties.sample }.uniq
   the_taxons = [place_taxons.sample, category_taxons.sample]
-  the_name = "Package:" + Faker::Company.name
+  the_name = "Package: " + Faker::Company.name
   the_price = (rand(100) + 20).to_i / 5 * 5
   the_description = Faker::Lorem.paragraphs(rand(5) + 1).join("<br>")
   the_sku = Faker.bothify('???-######').upcase
