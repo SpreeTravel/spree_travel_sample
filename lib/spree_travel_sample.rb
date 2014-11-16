@@ -20,6 +20,13 @@ module SpreeTravelSample
           'products',
           'rates',
         ],
+        'packages' => [
+          'taxons',
+          #'property_types',
+          'properties',
+          'products',
+          'rates',
+        ],
         'flights' => [
           #'taxonomies',
           #'taxons',
@@ -38,32 +45,16 @@ module SpreeTravelSample
 
       #Properties
       #Spree::TravelSample.load_travel_sample("properties_flight")
-      #Spree::TravelSample.load_travel_sample("properties_program")
       #Spree::TravelSample.load_travel_sample("properties_rent_a_car")
       #Spree::TravelSample.load_travel_sample("properties_tour")
       #Spree::TravelSample.load_travel_sample("properties_transfer")
 
       #Taxon
       #Spree::TravelSample.load_travel_sample("taxons_flight")
-      #Spree::TravelSample.load_travel_sample("taxons_program")
       #Spree::TravelSample.load_travel_sample("taxons_tour")
       #Spree::TravelSample.load_travel_sample("taxons_transfer")
       #Spree::TravelSample.load_travel_sample("taxons_flight_destination")
       #Spree::TravelSample.load_travel_sample("taxons_thing_to_do")
-
-
-      #Products Hotel
-      #Spree::TravelSample.load_travel_sample("hotel_products")
-      #Spree::TravelSample.load_travel_sample("hotel_properties")
-      #Spree::TravelSample.load_travel_sample("hotel_product_properties")
-      #Spree::TravelSample.load_travel_sample("hotel_rates")
-      #Spree::TravelSample.load_travel_sample("hotel_variants")
-      #Spree::TravelSample.load_travel_sample("hotel_assets")
-
-      #Products Flights
-
-      #Products Programs
-
     end
 
     def self.load_travel_dir(dir)
