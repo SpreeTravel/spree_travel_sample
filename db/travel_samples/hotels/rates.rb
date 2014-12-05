@@ -20,6 +20,7 @@ for hotel in hotels
 
           rate = Spree::Rate.new
           rate.variant_id = room.id
+          rate.first_time!
           rate.save
           rate.set_persisted_option_value(:start_date, start_date)
           rate.set_persisted_option_value(:end_date, end_date)
