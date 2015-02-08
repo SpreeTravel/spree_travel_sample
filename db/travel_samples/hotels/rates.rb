@@ -15,8 +15,8 @@ for hotel in hotels
     for year in 1..years
       for season in 1..seasons
         for plan in plans
-          start_date = "2014-01-01".to_date + (year - 1) * 365 + (season - 1) * (365 / seasons)
-          end_date = "2014-01-01".to_date + (year - 1) * 365 + season * (365 / seasons) - 1
+          start_date = Date.today + (year - 1) * 365 + (season - 1) * (365 / seasons)
+          end_date = Date.today + (year - 1) * 365 + season * (365 / seasons) - 1
 
           rate = Spree::Rate.new
           rate.variant_id = room.id
