@@ -38,4 +38,5 @@ for hotel in hotels
       end
     end
   end
+  hotel.generate_all_combinations
 end
