@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.description = 'Load travel sample data'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo', 'Alejandro Dustet']
-  s.email     = 'pecuerre@gmail.com'
+  s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-Alejo Neyra']
+  s.email     = 'info@openjaf.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
   s.require_path = 'lib'
