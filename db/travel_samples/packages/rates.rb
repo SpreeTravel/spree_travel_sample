@@ -12,8 +12,8 @@ end
 for package in packages
   for year in 1..years
     for season in 1..seasons
-      start_date = "2014-01-01".to_date + (year - 1) * 365 + (season - 1) * (365 / seasons)
-      end_date = "2014-01-01".to_date + (year - 1) * 365 + season * (365 / seasons) - 1
+      start_date = Date.today + (year - 1) * 365 + (season - 1) * (365 / seasons)
+      end_date = Date.today + (year - 1) * 365 + season * (365 / seasons) - 1
 
       rate = Spree::Rate.new
       rate.first_time!
@@ -28,4 +28,6 @@ for package in packages
       puts "  - created: ".green + string
     end
   end
+  puts "Generating the combinations for ".blue + package.name.to_s
+  package.generate_all_combinations
 end
