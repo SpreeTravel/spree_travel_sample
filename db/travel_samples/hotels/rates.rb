@@ -38,6 +38,4 @@ for hotel in hotels
       end
     end
   end
-  puts "Generating the combinations for ".blue + hotel.name.to_s
-  hotel.generate_all_combinations
 end
