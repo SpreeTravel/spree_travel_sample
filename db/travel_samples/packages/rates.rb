@@ -17,7 +17,7 @@ for package in packages
 
       rate = Spree::Rate.new
       rate.first_time!
-      rate.variant_id = package.master.id
+      rate.variant_id = package.variants.first.id
       rate.save
       rate.set_persisted_option_value(:start_date, start_date)
       rate.set_persisted_option_value(:end_date, end_date)
@@ -28,6 +28,4 @@ for package in packages
       puts "  - created: ".green + string
     end
   end
-  puts "Generating the combinations for ".blue + package.name.to_s
-  package.generate_all_combinations
 end
