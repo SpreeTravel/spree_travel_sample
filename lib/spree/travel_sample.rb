@@ -1,4 +1,4 @@
-require "colored"
+require "colorize"
 
 module Spree
   module TravelSample
