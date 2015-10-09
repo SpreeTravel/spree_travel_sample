@@ -12,12 +12,12 @@ namespace :spree_travel_sample do
 	  end
 
 	  desc 'Loads travel sample data for packages'
-	  task :hotels do
+	  task :packages do
 	    SpreeTravelSample::Engine.load_travel_samples('packages')
 	  end
 
 	  desc 'Loads travel sample data for all product types'
-	  task :hotels do
+	  task :all do
 	    SpreeTravelSample::Engine.load_travel_samples('all')
 	  end
 	end
