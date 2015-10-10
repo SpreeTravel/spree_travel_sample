@@ -42,11 +42,11 @@ module Spree
     end
 
     def self.create_taxonomy(taxonomy_attrs)
-      taxonomy = Spree::Taxonomy.where(:name => taxonomy_attrs[:name]).first
+      taxonomy = ::Spree::Taxonomy.where(:name => taxonomy_attrs[:name]).first
       if taxonomy
         puts "skipped: ".yellow + "Taxonomy: #{taxonomy_attrs[:name]}"
       else
-        taxonomy = Spree::Taxonomy.create(taxonomy_attrs)
+        taxonomy = ::Spree::Taxonomy.create(taxonomy_attrs)
         puts "created: ".green + "Taxonomy: #{taxonomy_attrs[:name]}"
       end
       taxonomy
