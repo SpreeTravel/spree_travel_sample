@@ -1,5 +1,6 @@
 require 'spree_core'
 require 'spree/travel_sample'
+require 'spree/core'
 
 module SpreeTravelSample
   class Engine < Rails::Engine
