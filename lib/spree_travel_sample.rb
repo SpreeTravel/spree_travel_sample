@@ -8,7 +8,7 @@ module SpreeTravelSample
     def self.sample_hash
       {
         'common' => [
-          'shipping_categories',
+          #'shipping_categories',
           'taxonomies',
           'taxons',
           #'property_types',
