@@ -1,6 +1,5 @@
 require 'spree_core'
 require 'spree/travel_sample'
-require 'spree/core'
 
 module SpreeTravelSample
   class Engine < Rails::Engine
@@ -9,9 +8,9 @@ module SpreeTravelSample
     def self.sample_hash
       {
         'common' => [
-          #'shipping_categories',
-          #'taxonomies',
-          #'taxons',
+          'shipping_categories',
+          'taxonomies',
+          'taxons',
           #'property_types',
         ],
         'hotels' => [
