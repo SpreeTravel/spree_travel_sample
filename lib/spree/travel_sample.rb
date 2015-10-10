@@ -1,5 +1,5 @@
 require "colorize"
-require 'spree/core'
+require 'spree_core'
 
 module Spree
   module TravelSample
