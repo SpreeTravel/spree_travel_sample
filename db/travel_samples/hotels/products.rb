@@ -6,7 +6,7 @@ category_taxonomy = Spree::Taxonomy.find_by_name('Category')
 category_taxons = Spree::Taxon.where(:taxonomy_id => category_taxonomy.id).where(:name => 'Hotel').first.self_and_descendants.to_a
 shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
-amount_of_fake_products = 3 # HERE
+amount_of_fake_products = 20 # HERE
 available_on = Time.now - 1.day
 product_type = Spree::ProductType.where(:name => 'hotel').first
 hotel_calculator = Spree::TravelCalculator.find_by_name('Spree::CalculatorHotel')

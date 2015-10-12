@@ -12,12 +12,12 @@ end
 for package in packages
   for year in 1..years
     for season in 1..seasons
-      start_date = "2014-01-01".to_date + (year - 1) * 365 + (season - 1) * (365 / seasons)
-      end_date = "2014-01-01".to_date + (year - 1) * 365 + season * (365 / seasons) - 1
+      start_date = Date.today + (year - 1) * 365 + (season - 1) * (365 / seasons)
+      end_date = Date.today + (year - 1) * 365 + season * (365 / seasons) - 1
 
       rate = Spree::Rate.new
       rate.first_time!
-      rate.variant_id = package.master.id
+      rate.variant_id = package.variants.first.id
       rate.save
       rate.set_persisted_option_value(:start_date, start_date)
       rate.set_persisted_option_value(:end_date, end_date)
