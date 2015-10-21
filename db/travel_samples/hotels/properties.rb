@@ -37,12 +37,14 @@ properties = {
   },
 }
 
+Spree::Property.destroy_all
+
 properties.keys.each do |type|
   pt = Spree::PropertyType.find_by_name(type) rescue nil
   hash = properties[type]
   hash.each do |key, value|
     # TODO: adicionar aqui las property types cuando sean dependencia
-    prop = Spree::TravelSample.create_property({ :name => key, :presentation => value })
+    prop = Spree::TravelSample.create_property({ :name => key, :presentation => value, :property_type_id => pt.id })
   end
 end
 

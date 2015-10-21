@@ -15,7 +15,7 @@ module SpreeTravelSample
         ],
         'hotels' => [
           'taxons',
-          #'property_types',
+          'property_types',
           'properties',
           'products',
           'rates',
