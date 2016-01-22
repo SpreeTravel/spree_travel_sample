@@ -15,7 +15,14 @@ module SpreeTravelSample
         ],
         'hotels' => [
           'taxons',
-          'property_types',
+          # 'property_types',
+          'properties',
+          'products',
+          'rates',
+        ],
+        'tours' => [
+          'taxons',
+          #'property_types',
           'properties',
           'products',
           'rates',
@@ -30,6 +37,10 @@ module SpreeTravelSample
         'flights' => [
           #'taxonomies',
           #'taxons',
+        ],
+        'cruises' => [
+          'taxons',  
+          'products',
         ],
         'points' => [
           #'taxonomies',

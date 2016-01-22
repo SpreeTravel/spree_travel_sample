@@ -17,7 +17,7 @@ taxons = [
     { :name => "Granma", :taxonomy => 'Destination', :parent => 'Destination' },
     { :name => "Santiago de Cuba", :taxonomy => 'Destination', :parent => 'Destination' },
     { :name => "Guantanamo", :taxonomy => 'Destination', :parent => 'Destination' },
-  { :name => "Category", :taxonomy => "Category", },
+  { :name => "Categories", :taxonomy => "Categories", },
 ]
 
 taxons.each do |taxon_attrs|

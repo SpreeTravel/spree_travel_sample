@@ -1,8 +1,8 @@
 taxons = [
-  { :name => "Hotel", :taxonomy => "Category", :parent => 'Category'},
-    { :name => "Hotel City", :taxonomy => "Category", :parent => 'Hotel'},
-    { :name => "Hotel Rural", :taxonomy => "Category", :parent => 'Hotel'},
-    { :name => "Hotel Beach", :taxonomy => "Category", :parent => 'Hotel'},
+  { :name => "Hotel", :taxonomy => "Categories", :parent => 'Categories'},
+    { :name => "Hotel City", :taxonomy => "Categories", :parent => 'Hotel'},
+    { :name => "Hotel Rural", :taxonomy => "Categories", :parent => 'Hotel'},
+    { :name => "Hotel Beach", :taxonomy => "Categories", :parent => 'Hotel'},
 ]
 
 taxons.each do |taxon_attrs|

@@ -2,7 +2,7 @@
 place_taxonomy = Spree::Taxonomy.find_by_name('Destination')
 place_taxons = Spree::Taxon.where(:taxonomy_id => place_taxonomy.id).to_a
 place_taxons.shift
-category_taxonomy = Spree::Taxonomy.find_by_name('Category')
+category_taxonomy = Spree::Taxonomy.find_by_name('Categories')
 category_taxons = Spree::Taxon.where(:taxonomy_id => category_taxonomy.id).where(:name => 'Hotel').first.self_and_descendants.to_a
 shipping_category = Spree::ShippingCategory.first
 properties = Spree::Property.all.to_a
