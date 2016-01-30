@@ -56,7 +56,7 @@ end
 
 index = 0
 hash = {}
-CSV.foreach("/home/raul/work/spree_travel/spree_travel_sample/db/travel_samples/cruises/cruices.csv") do |row|
+CSV.foreach(File.dirname(__FILE__) + "/cruices.csv") do |row|
   index += 1
   next if index == 1
   next unless (cruice_data = get_cruice_parts(row)).present?
