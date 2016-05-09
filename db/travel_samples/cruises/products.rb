@@ -2,14 +2,14 @@ require "csv"
 
 shipping_category = Spree::ShippingCategory.first
 available_on = Time.now - 1.day
-cruise_product_type = Spree::ProductType.find_by(name: 'cruise') 
+cruise_product_type = Spree::ProductType.find_by(name: 'cruise')
 cruise_calculator = Spree::TravelCalculator.where(:name => 'Spree::CalculatorCruise').first
 product_name = 'Rounding Cuba in 7 days'
 
 Spree::Product.where(name: product_name).destroy_all
 
 if (cruice_product = Spree::Variant.where(sku: 'CRUICE-WORLD')).present?
-  cruice_product.delete_all 
+  cruice_product.delete_all
 end
 
 skus = ['Inside Cabin', 'Outside Cabin', 'Balcony Cabin', 'Suite Cabin'].map(&:parameterize)
@@ -56,7 +56,10 @@ end
 
 index = 0
 hash = {}
+puts File.dirname(__FILE__).to_s + "/cruices.csv"
+
 CSV.foreach(File.dirname(__FILE__) + "/cruices.csv") do |row|
+  puts row.inspect
   index += 1
   next if index == 1
   next unless (cruice_data = get_cruice_parts(row)).present?
@@ -69,8 +72,9 @@ CSV.foreach(File.dirname(__FILE__) + "/cruices.csv") do |row|
   rate.set_persisted_option_value(:double, cruice_data[:double])
   rate.option_values << Spree::RateOptionValue.find_or_create_by(value: 'cruice')
   rate.save!
+  puts rate.inspect
 end
- 
+
 
 def get_cruice_parts(row)
     return nil unless row[0].present?
