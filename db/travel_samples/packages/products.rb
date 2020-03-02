@@ -18,10 +18,10 @@ packages = Spree::Product.where(:product_type => Spree::ProductType.find_by_name
 amount_of_fake_products.times do
   the_properties = (1..rand(properties.length)).map { properties.sample }.uniq
   the_taxons = [place_taxons.sample, category_taxons.sample]
-  the_name = "Package: " + Faker::Company.name
+  the_name = "Package: " + FFaker::Company.name
   the_price = (rand(100) + 20).to_i / 5 * 5
-  the_description = Faker::Lorem.paragraphs(rand(5) + 1).join("<br>")
-  the_sku = Faker.bothify('???-######').upcase
+  the_description = FFaker::Lorem.paragraphs(rand(5) + 1).join("<br>")
+  the_sku = FFaker.bothify('???-######').upcase
   product_attrs = {
     :name => the_name,
     :price => the_price,
