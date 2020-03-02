@@ -1,7 +1,7 @@
-hotels = Spree::Product.where(:product_type => Spree::ProductType.find_by_name('hotel'))
-years = 1 # HERE
+hotels  = Spree::Product.where(product_type: Spree::ProductType.find_by_name('hotel'))
+years   = 1 # HERE
 seasons = 2 # HERE
-plans = Spree::OptionType.find_by_name('plan').option_values
+plans   = Spree::OptionType.find_by_name('plan').option_values
 
 def price(base, multiplier, adder)
   number = rand(base.max - base.min) + base.min
@@ -15,8 +15,8 @@ for hotel in hotels
     for year in 1..years
       for season in 1..seasons
         for plan in plans
-          start_date = "2014-01-01".to_date + (year - 1) * 365 + (season - 1) * (365 / seasons)
-          end_date = "2014-01-01".to_date + (year - 1) * 365 + season * (365 / seasons) - 1
+          start_date = Date.today + (year - 1) * 365 + (season - 1) * (365 / seasons)
+          end_date = Date.today + (year - 1) * 365 + season * (365 / seasons) - 1
 
           rate = Spree::Rate.new
           rate.variant_id = room.id
