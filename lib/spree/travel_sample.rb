@@ -75,8 +75,8 @@ module Spree
     end
 
     def self.create_product_properties(product_properties_attrs)
-      pp = Spree::ProductProperty.create(product_properties_attrs)
-      puts "  - created: ".green + "ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
+      Spree::ProductProperty.create(product_properties_attrs)
+      puts "  - created: ".yellow + "ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
     end
 
     private
