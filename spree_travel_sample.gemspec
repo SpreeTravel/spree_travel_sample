@@ -16,12 +16,12 @@ Gem::Specification.new do |s|
   s.email     = 'pecuerre@gmail.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
+  s.files       = `git ls-files`.split("\n")
+  s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> ' + versions['spree']
-  s.add_dependency 'colored'
-  #s.add_dependency 'spree_travel_core'
+  s.add_dependency 'spree_travel', '~> ' + versions['spree_travel']
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'coffee-rails'
