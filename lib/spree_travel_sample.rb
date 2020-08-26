@@ -13,29 +13,29 @@ module SpreeTravelSample
           'taxons',
           #'property_types',
         ],
-        'hotels' => [
+        'hotel' => [
           'taxons',
           #'property_types',
           'properties',
           'products',
           'rates',
         ],
-        'packages' => [
+        'package' => [
           'taxons',
           #'property_types',
           'properties',
           'products',
           'rates',
         ],
-        'flights' => [
+        'flight' => [
           #'taxonomies',
           #'taxons',
         ],
-        'points' => [
+        'point' => [
           #'taxonomies',
           #'taxons',
         ],
-        'cars' => [
+        'car' => [
           'taxons',
           'products',
           'rates'
