@@ -27,7 +27,7 @@ for car in cars
         rate.set_persisted_option_value(:fourteen_twentynine_days, triple = price(60..100, 3, 15..40))
         rate.save
         string = "Rate: #{car.name}: (start:#{start_date}) (end:#{end_date})"
-        puts "  - created: ".green + string
+        puts "  - created: " + string
       end
     end
   end
