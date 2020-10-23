@@ -7,13 +7,13 @@ versions = yaml['gems']
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_travel_sample'
-  s.version     = versions['spree_travel']
+  s.version     = versions['spree_travel_core']
   s.summary     = 'Spree Travel Sample'
   s.description = 'Load travel sample data'
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.6.5'
 
   s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo', 'Alejandro Dustet']
-  s.email     = 'pecuerre@gmail.com'
+  s.email     = 'rperezalejo@gmail.com'
   s.homepage  = 'http://github.com/openjaf/spree_travel_sample'
 
   s.files       = `git ls-files`.split("\n")
@@ -21,16 +21,12 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_travel', '~> ' + versions['spree_travel']
+  s.add_dependency 'spree_travel_core', '~> ' + versions['spree_travel_core']
+  s.add_dependency 'spree_travel_car', '~> ' + versions['spree_travel_core']
+  s.add_dependency 'ffaker'
 
-  s.add_development_dependency 'capybara'
-  s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'database_cleaner'
-  s.add_development_dependency 'factory_girl'
-  s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'sass-rails'
-  s.add_development_dependency 'selenium-webdriver'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'sqlite3'
+
+  s.add_development_dependency 'byebug'
+
+
 end

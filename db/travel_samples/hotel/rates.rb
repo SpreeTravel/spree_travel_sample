@@ -33,7 +33,7 @@ for hotel in hotels
           rate.save
           string = "Rate: #{hotel.name}: (room:#{room.id}), (plan:#{plan.id}) (start:#{start_date}) (end:#{end_date})"
           string += " (simple:#{simple}) (double:#{double}) (triple:#{triple})"
-          puts "  - created: ".green + string
+          puts "  - created: " + string
         end
       end
     end

@@ -25,7 +25,7 @@ for package in packages
       rate.set_persisted_option_value(:one_adult, adult = price(20..40, 1, 5..10))
       rate.save
       string = "Rate: #{package.name}: (start:#{start_date}) (end:#{end_date}) (child:#{child}) (adult:#{adult})"
-      puts "  - created: ".green + string
+      puts "  - created: " + string
     end
   end
 end

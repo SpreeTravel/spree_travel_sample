@@ -38,7 +38,8 @@ module SpreeTravelSample
         'car' => [
           'taxons',
           'products',
-          'rates'
+          'rates',
+          'stock'
         ]
       }
 
