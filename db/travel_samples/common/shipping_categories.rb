@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 shipping_attrs = [
-  {:name => 'Default'}
+  { name: 'Default' }
 ]
 
-for attrs in shipping_attrs
+shipping_attrs.each do |attrs|
   Spree::TravelSample.create_shipping_category(attrs)
 end

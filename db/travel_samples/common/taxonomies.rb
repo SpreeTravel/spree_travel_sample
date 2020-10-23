@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 taxonomies = [
-  { :name => "Destination", :position => 1 },
-  { :name => "Category", :position => 2 },
+  { name: 'Destination', position: 1 },
+  { name: 'Category', position: 2 }
 ]
 
 taxonomies.each do |taxonomy_attrs|

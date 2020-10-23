@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 taxons = [
-  { :name => "Car Rental", :taxonomy => "Category", :parent => 'Category'},
+  { name: 'Car Rental', taxonomy: 'Category', parent: 'Category' }
 ]
 
 taxons.each do |taxon_attrs|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spree_core'
 require 'spree/travel_sample'
 
@@ -10,58 +12,42 @@ module SpreeTravelSample
         'common' => [
           'shipping_categories',
           'taxonomies',
-          'taxons',
-          #'property_types',
+          'taxons'
+          # 'property_types',
         ],
         'hotel' => [
           'taxons',
-          #'property_types',
+          # 'property_types',
           'properties',
           'products',
-          'rates',
+          'rates'
         ],
         'package' => [
           'taxons',
-          #'property_types',
+          # 'property_types',
           'properties',
           'products',
-          'rates',
+          'rates'
         ],
         'flight' => [
-          #'taxonomies',
-          #'taxons',
+          # 'taxonomies',
+          # 'taxons',
         ],
         'point' => [
-          #'taxonomies',
-          #'taxons',
+          # 'taxonomies',
+          # 'taxons',
         ],
-        'car' => [
-          'taxons',
-          'products',
-          'rates',
-          'stock'
+        'car' => %w[
+          taxons
+          products
+          rates
+          stock
         ]
       }
-
-      #General
-      #Spree::TravelSample.load_travel_sample("product_option_types")
-
-      #Properties
-      #Spree::TravelSample.load_travel_sample("properties_flight")
-      #Spree::TravelSample.load_travel_sample("properties_rent_a_car")
-      #Spree::TravelSample.load_travel_sample("properties_tour")
-      #Spree::TravelSample.load_travel_sample("properties_transfer")
-
-      #Taxon
-      #Spree::TravelSample.load_travel_sample("taxons_flight")
-      #Spree::TravelSample.load_travel_sample("taxons_tour")
-      #Spree::TravelSample.load_travel_sample("taxons_transfer")
-      #Spree::TravelSample.load_travel_sample("taxons_flight_destination")
-      #Spree::TravelSample.load_travel_sample("taxons_thing_to_do")
     end
 
     def self.load_travel_dir(dir)
-      files = self.sample_hash[dir]
+      files = sample_hash[dir]
       files.each do |file|
         Spree::TravelSample.load_travel_sample(dir, file)
       end
@@ -69,14 +55,13 @@ module SpreeTravelSample
 
     def self.load_travel_samples(what)
       if what == 'all'
-        self.sample_hash.keys.each do |dir|
-          self.load_travel_dir(dir)
+        sample_hash.keys.each do |dir|
+          load_travel_dir(dir)
         end
       else
-        self.load_travel_dir('common')
-        self.load_travel_dir(what)
+        load_travel_dir('common')
+        load_travel_dir(what)
       end
-
     end
   end
 end

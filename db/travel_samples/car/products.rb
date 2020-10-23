@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### Some Global Variables
 shipping_category       = Spree::ShippingCategory.first
 amount_of_fake_products = 5
@@ -18,8 +20,8 @@ def generate_variants(product, category_option_value)
     variant.price = 0
     variant.product_id = product.id
     variant.calculator = product.product_type.calculator
-    string = "PRODUCT:" + " #{product.name}: "
-    for ov in array
+    string = 'PRODUCT:' + " #{product.name}: "
+    array.each do |ov|
       opt_name = ov.option_type.name
       opt_value = ov.name
       string += "#{opt_name.upcase}: #{opt_value}, "
@@ -27,13 +29,13 @@ def generate_variants(product, category_option_value)
     end
     variant.save
     product_type_image.rewind
-    variant.images.create!(attachment: { io: product_type_image, filename: "car.png" })
+    variant.images.create!(attachment: { io: product_type_image, filename: 'car.png' })
   end
 end
 
 def image
   images_path = Pathname.new(File.dirname(__FILE__)) + '../images'
-  path = images_path + "car.png"
+  path = images_path + 'car.png'
   return false unless File.exist?(path)
 
   File.open(path)
@@ -50,9 +52,9 @@ end
 ### Creating Products
 category_option_type.option_values.each do |category_option_value|
   amount_of_fake_products.times do
-    name        = "Car: " + FFaker::Company.name
-    price       = (rand(100) + 20).to_i / 5 * 5
-    description = FFaker::Lorem.paragraphs(rand(5) + 1).join("<br>")
+    name        = 'Car: ' + FFaker::Company.name
+    price       = rand(20..119).to_i / 5 * 5
+    description = FFaker::Lorem.paragraphs(rand(1..5)).join('<br>')
     sku         = FFaker.bothify('???-######').upcase
 
     product_attrs = {
@@ -63,16 +65,16 @@ category_option_type.option_values.each do |category_option_value|
       shipping_category_id: shipping_category.id,
       available_on: available_on,
       product_type_id: product_type.id,
-      calculator_id: car_calculator.id,
+      calculator_id: car_calculator.id
     }
 
     product = Spree::TravelSample.create_product(product_attrs)
 
     properties.sample(8).each do |property|
       product_properties_attrs = {
-          product_id: product.id,
-          property_id: property.id,
-          value: 'yes'
+        product_id: product.id,
+        property_id: property.id,
+        value: 'yes'
       }
       Spree::TravelSample.create_product_properties(product_properties_attrs)
     end
@@ -80,4 +82,3 @@ category_option_type.option_values.each do |category_option_value|
     generate_variants(product, category_option_value)
   end
 end
-
