@@ -13,7 +13,6 @@ properties              = Spree::Property.all.to_a
 Spree::Product.where(product_type: product_type).destroy_all
 
 def generate_variants(product, category_option_value)
-  product_type_image = image
   variations(product, category_option_value).each do |array|
     variant = Spree::Variant.new
     variant.sku = FFaker.bothify('???-######').upcase
@@ -28,17 +27,7 @@ def generate_variants(product, category_option_value)
       variant.set_option_value(opt_name, opt_value)
     end
     variant.save
-    product_type_image.rewind
-    variant.images.create!(attachment: { io: product_type_image, filename: 'car.png' })
   end
-end
-
-def image
-  images_path = Pathname.new(File.dirname(__FILE__)) + '../images'
-  path = images_path + 'car.png'
-  return false unless File.exist?(path)
-
-  File.open(path)
 end
 
 def variations(product, category_option_value)
