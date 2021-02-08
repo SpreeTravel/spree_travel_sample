@@ -9,40 +9,8 @@ module SpreeTravelSample
 
     def self.sample_hash
       {
-        'common' => [
-          'shipping_categories',
-          'taxonomies',
-          'taxons'
-          # 'property_types',
-        ],
-        'hotel' => [
-          'taxons',
-          # 'property_types',
-          'properties',
-          'products',
-          'rates'
-        ],
-        'package' => [
-          'taxons',
-          # 'property_types',
-          'properties',
-          'products',
-          'rates'
-        ],
-        'flight' => [
-          # 'taxonomies',
-          # 'taxons',
-        ],
-        'point' => [
-          # 'taxonomies',
-          # 'taxons',
-        ],
-        'car' => %w[
-          taxons
-          products
-          rates
-          stock
-        ]
+        'common' => %w[shipping_categories taxonomies taxons],
+        'car' => %w[taxons products rates stock]
       }
     end
 

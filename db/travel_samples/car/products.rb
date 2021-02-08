@@ -38,10 +38,13 @@ def variations(product, category_option_value)
   the_big_array
 end
 
+brands = %w[Ford Chevrolet Buick Tesla Cadillac GMC Ram Dodge Jeep Lincoln Chrysler Nissan Renault BYD Nio]
+make = %w[Rav4 Srx Mirage 1500 Tahoe Envoy Sonata Fusion Cx-5 Tundra]
+
 ### Creating Products
 category_option_type.option_values.each do |category_option_value|
   amount_of_fake_products.times do
-    name        = 'Car: ' + FFaker::Company.name
+    name        = 'Car: ' + brands.sample + ' ' + make.sample
     price       = rand(20..119).to_i / 5 * 5
     description = FFaker::Lorem.paragraphs(rand(1..5)).join('<br>')
     sku         = FFaker.bothify('???-######').upcase
