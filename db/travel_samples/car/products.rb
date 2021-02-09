@@ -42,7 +42,7 @@ end
 ### Creating Products
 category_option_type.option_values.each do |category_option_value|
   amount_of_fake_products.times do
-    name        = 'Car: ' + brands.sample + ' ' + make.sample
+    name        = FFaker::Vehicle.make + ' ' + FFaker::Vehicle.model
     price       = rand(20..119).to_i / 5 * 5
     description = FFaker::Lorem.paragraphs(rand(1..5)).join('<br>')
     sku         = FFaker.bothify('???-######').upcase
