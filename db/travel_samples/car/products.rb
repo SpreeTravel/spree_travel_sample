@@ -5,7 +5,7 @@ shipping_category       = Spree::ShippingCategory.first
 amount_of_fake_products = 5
 available_on            = Time.now - 1.day
 product_type            = Spree::ProductType.find_by(name: 'car')
-car_calculator          = Spree::TravelCalculator.find_by_name('Spree::CalculatorCar')
+car_calculator          = Spree::TravelCalculator.find_by(name: 'Spree::CalculatorCar')
 category_option_type    = Spree::OptionType.find_by(name: 'category')
 properties              = Spree::Property.all.to_a
 
@@ -14,6 +14,7 @@ Spree::Product.where(product_type: product_type).destroy_all
 
 def generate_variants(product, category_option_value)
   variations(product, category_option_value).each do |array|
+    puts "  * variant: #{array[0].presentation} #{array[1].presentation}"
     variant = Spree::Variant.new
     variant.sku = FFaker.bothify('???-######').upcase
     variant.price = 0
@@ -38,9 +39,6 @@ def variations(product, category_option_value)
   the_big_array
 end
 
-brands = %w[Ford Chevrolet Buick Tesla Cadillac GMC Ram Dodge Jeep Lincoln Chrysler Nissan Renault BYD Nio]
-make = %w[Rav4 Srx Mirage 1500 Tahoe Envoy Sonata Fusion Cx-5 Tundra]
-
 ### Creating Products
 category_option_type.option_values.each do |category_option_value|
   amount_of_fake_products.times do
@@ -60,7 +58,10 @@ category_option_type.option_values.each do |category_option_value|
       calculator_id: car_calculator.id
     }
 
-    product = Spree::TravelSample.create_product(product_attrs)
+    product = Spree::Product.create(product_attrs)
+    puts "created: " + "Product: #{product_attrs[:name]}"
+
+    generate_variants(product, category_option_value)
 
     properties.sample(8).each do |property|
       product_properties_attrs = {
@@ -70,7 +71,5 @@ category_option_type.option_values.each do |category_option_value|
       }
       Spree::TravelSample.create_product_properties(product_properties_attrs)
     end
-
-    generate_variants(product, category_option_value)
   end
 end

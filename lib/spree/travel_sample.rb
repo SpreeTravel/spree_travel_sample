@@ -62,17 +62,6 @@ module Spree
       property
     end
 
-    def self.create_product(product_attrs)
-      product = Spree::Product.where(:name => product_attrs[:name]).first
-      if product
-        puts "skipped: " + "Product: #{product_attrs[:name]}"
-      else
-        product = Spree::Product.create(product_attrs)
-        puts "created: " + "Product: #{product_attrs[:name]}"
-      end
-      product
-    end
-
     def self.create_product_properties(product_properties_attrs)
       Spree::ProductProperty.create(product_properties_attrs)
       puts "  - created: " + "ProductProperty: #{Spree::Property.find(product_properties_attrs[:property_id]).name}"
