@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.version     = versions['spree_travel_core']
   s.summary     = 'Spree Travel Sample'
   s.description = 'Load travel sample data'
-  s.required_ruby_version = '>= 2.6.5'
+  s.required_ruby_version = '>= 2.5.0'
 
   s.author    = ['Pedro Quintero', 'Miguel Sancho', 'Cesar Lage', 'Raul Perez-alejo', 'Alejandro Dustet']
   s.email     = 'rperezalejo@gmail.com'
@@ -21,12 +21,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_travel_core', '~> ' + versions['spree_travel_core']
-  s.add_dependency 'spree_travel_car', '~> ' + versions['spree_travel_core']
+  s.add_dependency 'spree_travel_core', versions['spree_travel_core']
+  s.add_dependency 'spree_travel_car', versions['spree_travel_core']
   s.add_dependency 'ffaker'
 
-
   s.add_development_dependency 'byebug'
-
-
 end
